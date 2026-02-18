@@ -6,7 +6,7 @@
   <title>SEVENTHAURA</title>
   <style>
     :root {
-      --bg: #F5F2EB;       /* eggshell off-white */
+      --bg: #F5F2EB;
       --text: #111111;
       --sub: #666666;
     }
@@ -29,52 +29,69 @@
       letter-spacing: 0.8em;
       text-transform: uppercase;
       opacity: 0.6;
-      margin-bottom: 100px;
+      margin-bottom: 140px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 80px 60px;
     }
     .product {
-      max-width: 1200px;
-      margin: 0 auto 80px;
+      position: relative;
+      text-align: center;
     }
-    .images-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-bottom: 40px;
-    }
-    .product-img {
+    .main-image {
       width: 100%;
       height: auto;
       display: block;
-      opacity: 0.98;
-      transition: opacity 0.5s, transform 0.5s;
+      transition: opacity 0.4s ease;
+      opacity: 1;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
-    .product-img:hover {
+    .product:hover .main-image {
+      opacity: 0.75;
+    }
+    .extra-images {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .product:hover .extra-images {
       opacity: 1;
-      transform: scale(1.03);
+      transform: translateY(0);
+    }
+    .extra-img {
+      width: 45%;
+      height: auto;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     .item-code {
-      font-size: 3.2rem;
-      letter-spacing: 0.5em;
+      font-size: 2.8rem;
+      letter-spacing: 0.4em;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin: 24px 0 10px;
       opacity: 0.9;
     }
     .sub {
-      font-size: 1.3rem;
-      letter-spacing: 0.25em;
-      opacity: 0.55;
-      margin-bottom: 30px;
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      opacity: 0.6;
+      margin-bottom: 20px;
     }
     .buy-link {
       display: inline-block;
       color: var(--text);
-      font-size: 1.1rem;
-      letter-spacing: 0.2em;
+      font-size: 1rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       text-decoration: none;
       border: 1px solid var(--text);
-      padding: 14px 32px;
+      padding: 12px 30px;
       transition: all 0.4s;
     }
     .buy-link:hover {
@@ -83,9 +100,11 @@
     }
     @media (max-width: 768px) {
       .container { padding: 80px 20px 60px; }
-      h1 { font-size: 3rem; letter-spacing: 0.5em; margin-bottom: 80px; }
-      .images-grid { grid-template-columns: 1fr; gap: 40px; }
-      .item-code { font-size: 2.4rem; letter-spacing: 0.35em; }
+      h1 { font-size: 3.2rem; letter-spacing: 0.5em; margin-bottom: 100px; }
+      .products { gap: 60px; }
+      .extra-images { flex-direction: column; gap: 16px; }
+      .extra-img { width: 70%; margin: 0 auto; }
+      .item-code { font-size: 2.2rem; letter-spacing: 0.3em; }
     }
   </style>
 </head>
@@ -94,39 +113,81 @@
   <div class="container">
     <h1>SEVENTHAURA</h1>
 
-    <div class="product">
-      <div class="images-grid">
-        <!-- All your uploaded royal blue hat photos – feel free to remove duplicates if too many -->
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-front-6996222f3f901.png" alt="Royal Blue SEVENTHAURA Hat - Front" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-front-6996222f402ab.png" alt="Royal Blue SEVENTHAURA Hat - Front Alternate" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-front-6996222f40563.png" alt="Royal Blue SEVENTHAURA Hat - Front Detail" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-front-6996222f4095f.png" alt="Royal Blue SEVENTHAURA Hat - Front Close" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-front-6996222f40eb2.png" alt="Royal Blue SEVENTHAURA Hat - Front Side Angle" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-front-6996222f41181.png" alt="Royal Blue SEVENTHAURA Hat - Front View" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-back-6996222f3fd0f.png" alt="Royal Blue SEVENTHAURA Hat - Back" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-back-6996222f4047a.png" alt="Royal Blue SEVENTHAURA Hat - Back Alternate" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-back-6996222f4087a.png" alt="Royal Blue SEVENTHAURA Hat - Back Detail" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-back-6996222f4107c.png" alt="Royal Blue SEVENTHAURA Hat - Back Close" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-left-front-6996222f3fdfd.png" alt="Royal Blue SEVENTHAURA Hat - Left Front" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-left-front-6996222f4068f.png" alt="Royal Blue SEVENTHAURA Hat - Left Front Angle" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-left-front-6996222f40a38.png" alt="Royal Blue SEVENTHAURA Hat - Left Side" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-left-front-6996222f41273.png" alt="Royal Blue SEVENTHAURA Hat - Left Detail" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-right-front-6996222f3fede.png" alt="Royal Blue SEVENTHAURA Hat - Right Front" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-right-front-6996222f40392.png" alt="Royal Blue SEVENTHAURA Hat - Right Angle" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-right-front-6996222f4078a.png" alt="Royal Blue SEVENTHAURA Hat - Right Side" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-right-front-6996222f40b11.png" alt="Royal Blue SEVENTHAURA Hat - Right Detail" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-right-front-6996222f40f97.png" alt="Royal Blue SEVENTHAURA Hat - Right Close" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-right-front-6996222f41363.png" alt="Royal Blue SEVENTHAURA Hat - Right View" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-product-details-6996222f3ffe3.png" alt="Royal Blue SEVENTHAURA Hat - Details" class="product-img">
-        <img src="5-panel-mid-profile-baseball-cap-royal-natural-product-details-2-6996222f400cd.png" alt="Royal Blue SEVENTHAURA Hat - Details Alternate" class="product-img">
-        <!-- Add more if you want, or remove some to slim it down -->
+    <div class="products">
+
+      <!-- 1. cap 1 (first) -->
+      <div class="product">
+        <img src="products/cap1/cap1-main.png" alt="Cap 1" class="main-image">
+        <div class="extra-images">
+          <img src="products/cap1/cap1-alt1.png" alt="Cap 1 Alt 1" class="extra-img">
+          <img src="products/cap1/cap1-alt2.png" alt="Cap 1 Alt 2" class="extra-img">
+        </div>
+        <div class="item-code">CAP-01</div>
+        <div class="sub">CAP 1</div>
+        <a href="https://your-buy-link-for-cap1.com" class="buy-link" target="_blank">Buy</a>
       </div>
 
-      <div class="item-code">CP-ROYAL</div>
-      <div class="sub">Royal Blue SEVENTHAURA Hat</div>
-      <a href="https://your-checkout-link-here.com/cp-royal" class="buy-link" target="_blank">Buy</a>
-    </div>
+      <!-- 2. blue cap -->
+      <div class="product">
+        <img src="products/blue-cap/blue-cap-main.png" alt="Blue Cap" class="main-image">
+        <div class="extra-images">
+          <img src="products/blue-cap/blue-cap-alt1.png" alt="Blue Cap Alt 1" class="extra-img">
+          <img src="products/blue-cap/blue-cap-alt2.png" alt="Blue Cap Alt 2" class="extra-img">
+        </div>
+        <div class="item-code">BLUE-01</div>
+        <div class="sub">BLUE CAP</div>
+        <a href="https://your-buy-link-for-blue-cap.com" class="buy-link" target="_blank">Buy</a>
+      </div>
 
+      <!-- 3. beanie -->
+      <div class="product">
+        <img src="products/beanie/beanie-main.png" alt="Beanie" class="main-image">
+        <div class="extra-images">
+          <img src="products/beanie/beanie-alt1.png" alt="Beanie Alt 1" class="extra-img">
+          <img src="products/beanie/beanie-alt2.png" alt="Beanie Alt 2" class="extra-img">
+        </div>
+        <div class="item-code">BEAN-01</div>
+        <div class="sub">BEANIE</div>
+        <a href="https://your-buy-link-for-beanie.com" class="buy-link" target="_blank">Buy</a>
+      </div>
+
+      <!-- 4. grey t -->
+      <div class="product">
+        <img src="products/grey-t/grey-t-main.png" alt="Grey T" class="main-image">
+        <div class="extra-images">
+          <img src="products/grey-t/grey-t-alt1.png" alt="Grey T Alt 1" class="extra-img">
+          <img src="products/grey-t/grey-t-alt2.png" alt="Grey T Alt 2" class="extra-img">
+        </div>
+        <div class="item-code">GREY-01</div>
+        <div class="sub">GREY T</div>
+        <a href="https://your-buy-link-for-grey-t.com" class="buy-link" target="_blank">Buy</a>
+      </div>
+
+      <!-- 5. yosemite t -->
+      <div class="product">
+        <img src="products/yosemite-t/yosemite-t-main.png" alt="Yosemite T" class="main-image">
+        <div class="extra-images">
+          <img src="products/yosemite-t/yosemite-t-alt1.png" alt="Yosemite T Alt 1" class="extra-img">
+          <img src="products/yosemite-t/yosemite-t-alt2.png" alt="Yosemite T Alt 2" class="extra-img">
+        </div>
+        <div class="item-code">YOSE-01</div>
+        <div class="sub">YOSEMITE T</div>
+        <a href="https://your-buy-link-for-yosemite-t.com" class="buy-link" target="_blank">Buy</a>
+      </div>
+
+      <!-- 6. sticker -->
+      <div class="product">
+        <img src="products/sticker/sticker-main.png" alt="Sticker" class="main-image">
+        <div class="extra-images">
+          <img src="products/sticker/sticker-alt1.png" alt="Sticker Alt 1" class="extra-img">
+          <img src="products/sticker/sticker-alt2.png" alt="Sticker Alt 2" class="extra-img">
+        </div>
+        <div class="item-code">STKR-01</div>
+        <div class="sub">STICKER</div>
+        <a href="https://your-buy-link-for-sticker.com" class="buy-link" target="_blank">Buy</a>
+      </div>
+
+    </div>
   </div>
 
 </body>
