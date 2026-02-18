@@ -8,87 +8,111 @@
     :root {
       --bg: #F5F2EB;
       --text: #111111;
+      --sub: #666666;
     }
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
       background: var(--bg);
       color: var(--text);
       font-family: 'Helvetica Neue', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      opacity: 0; 
-      animation: fadeIn 1s ease forwards;
+      font-weight: 300;
+      line-height: 1.2;
     }
-    @keyframes fadeIn { to { opacity: 1; } }
-
     .container {
       max-width: 1600px;
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 100px 40px 80px;
       text-align: center;
     }
-
     h1 {
-      font-family: 'Arial Black', sans-serif;
-      font-size: clamp(3rem, 10vw, 8rem); 
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      font-size: 7rem;
+      font-weight: 900;
+      letter-spacing: 1em;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 60px;
-      opacity: 0.8;
+      opacity: 0.75;
+      margin-bottom: 140px;
+      line-height: 1;
     }
-
     .products {
       display: grid;
-      /* This ensures products don't get squished */
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 60px;
-      padding-bottom: 100px; /* Extra space at bottom for scrolling */
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 80px 60px;
     }
-
     .product {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      text-align: center;
     }
-
-    /* DEBUG BORDER: If images break, you will still see this box */
-    .image-container {
-      width: 100%;
-      min-height: 300px; /* Forces height even if image is missing */
-      background: #e0e0e0; /* Light grey placeholder background */
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px dashed #999; /* Temporary dashed line to see the box */
+    .main-link {
+      display: block;
+      text-decoration: none;
     }
-
     .main-image {
       width: 100%;
       height: auto;
-      display: block;
+      border: none;
+      box-shadow: none;
+      outline: none;
+      background: transparent;
+      transition: opacity 0.4s ease;
+      opacity: 0.98;
     }
-
+    .product:hover .main-image {
+      opacity: 0.85;
+    }
+    .extra-images {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .product:hover .extra-images {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .extra-img {
+      width: 45%;
+      height: auto;
+      border: none;
+      box-shadow: none;
+    }
     .item-code {
-      font-size: 1.5rem;
-      letter-spacing: 0.2em;
+      font-size: 2.8rem;
+      letter-spacing: 0.4em;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin: 24px 0 10px;
+      opacity: 0.9;
     }
-
-    .buy-btn {
-      border: 1px solid var(--text);
-      padding: 15px 40px;
-      text-decoration: none;
-      color: var(--text);
-      text-transform: uppercase;
+    .sub {
+      font-size: 1.2rem;
       letter-spacing: 0.2em;
-      margin-top: 10px;
+      opacity: 0.6;
+      margin-bottom: 20px;
+    }
+    .buy-link {
       display: inline-block;
-      transition: 0.3s;
+      color: var(--text);
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--text);
+      padding: 12px 30px;
+      transition: all 0.4s;
     }
-    .buy-btn:hover {
+    .buy-link:hover {
       background: var(--text);
       color: var(--bg);
+    }
+    @media (max-width: 768px) {
+      .container { padding: 80px 20px 60px; }
+      h1 { font-size: 4.5rem; letter-spacing: 0.6em; margin-bottom: 100px; }
+      .products { gap: 60px; }
+      .extra-images { flex-direction: column; gap: 16px; }
+      .extra-img { width: 70%; margin: 0 auto; }
+      .item-code { font-size: 2.2rem; letter-spacing: 0.3em; }
     }
   </style>
 </head>
@@ -99,36 +123,84 @@
 
     <div class="products">
 
+      <!-- 1. Cap 1 -->
       <div class="product">
-        <div class="image-container">
-          <img src="products/cap1/stack.png" alt="Image Not Found" class="main-image">
+        <a href="products/cap-1.html" class="main-link" target="_blank">
+          <img src="products/cap1/stack.png" alt="Cap 1" class="main-image">
+        </a>
+        <div class="extra-images">
+          <img src="products/cap1/back.png" alt="Cap 1 Back" class="extra-img">
+          <img src="products/cap1/side.png" alt="Cap 1 Side" class="extra-img">
         </div>
         <div class="item-code">CAP-01</div>
-        <a href="#" class="buy-btn">Buy</a>
+        <div class="sub">CAP 1</div>
+        <a href="https://your-checkout-link.com/cap1" class="buy-link" target="_blank">Buy Now</a>
       </div>
 
+      <!-- 2. Blue Cap -->
       <div class="product">
-        <div class="image-container">
-          <img src="products/blue-cap/front.png" alt="Image Not Found" class="main-image">
+        <a href="products/blue-cap.html" class="main-link" target="_blank">
+          <img src="products/blue-cap/front.png" alt="Blue Cap" class="main-image">
+        </a>
+        <div class="extra-images">
+          <img src="products/blue-cap/back.png" alt="Blue Cap Back" class="extra-img">
+          <img src="products/blue-cap/side.png" alt="Blue Cap Side" class="extra-img">
         </div>
         <div class="item-code">BLUE-01</div>
-        <a href="#" class="buy-btn">Buy</a>
+        <div class="sub">BLUE CAP</div>
+        <a href="https://your-checkout-link.com/blue-cap" class="buy-link" target="_blank">Buy Now</a>
       </div>
 
+      <!-- 3. Beanie -->
       <div class="product">
-        <div class="image-container">
-          <img src="products/beanie/front flat.png" alt="Image Not Found" class="main-image">
+        <a href="products/beanie.html" class="main-link" target="_blank">
+          <img src="products/beanie/front flat.png" alt="Beanie" class="main-image">
+        </a>
+        <div class="extra-images">
+          <img src="products/beanie/detail.png" alt="Beanie Detail" class="extra-img">
+          <img src="products/beanie/ghost.png" alt="Beanie Ghost" class="extra-img">
         </div>
         <div class="item-code">BEAN-01</div>
-        <a href="#" class="buy-btn">Buy</a>
+        <div class="sub">BEANIE</div>
+        <a href="https://your-checkout-link.com/beanie" class="buy-link" target="_blank">Buy Now</a>
       </div>
 
+      <!-- 4. Grey T -->
       <div class="product">
-        <div class="image-container">
-          <img src="products/grey-t/front.png" alt="Image Not Found" class="main-image">
+        <a href="products/grey-t.html" class="main-link" target="_blank">
+          <img src="products/grey-t/front.png" alt="Grey T" class="main-image">
+        </a>
+        <div class="extra-images">
+          <img src="products/grey-t/back.png" alt="Grey T Back" class="extra-img">
+          <img src="products/grey-t/folded.png" alt="Grey T Folded" class="extra-img">
         </div>
         <div class="item-code">GREY-01</div>
-        <a href="#" class="buy-btn">Buy</a>
+        <div class="sub">GREY T</div>
+        <a href="https://your-checkout-link.com/grey-t" class="buy-link" target="_blank">Buy Now</a>
+      </div>
+
+      <!-- 5. Yosemite T -->
+      <div class="product">
+        <a href="products/yosemite-t.html" class="main-link" target="_blank">
+          <img src="products/yosemite-t/front.png" alt="Yosemite T" class="main-image">
+        </a>
+        <div class="extra-images">
+          <img src="products/yosemite-t/back.png" alt="Yosemite T Back" class="extra-img">
+          <img src="products/yosemite-t/folded.png" alt="Yosemite T Folded" class="extra-img">
+        </div>
+        <div class="item-code">YOSE-01</div>
+        <div class="sub">YOSEMITE T</div>
+        <a href="https://your-checkout-link.com/yosemite-t" class="buy-link" target="_blank">Buy Now</a>
+      </div>
+
+      <!-- 6. Sticker -->
+      <div class="product">
+        <a href="products/sticker.html" class="main-link" target="_blank">
+          <img src="products/sticker/mockup.png" alt="Sticker" class="main-image">
+        </a>
+        <div class="item-code">STKR-01</div>
+        <div class="sub">STICKER</div>
+        <a href="https://your-checkout-link.com/sticker" class="buy-link" target="_blank">Buy Now</a>
       </div>
 
     </div>
