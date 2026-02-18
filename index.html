@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SEVENTHAURA</title>
   <style>
-    /* Keep your existing style block here - no changes needed */
     :root {
       --bg: #F5F2EB;
       --text: #111111;
@@ -22,15 +21,20 @@
     .container {
       max-width: 1600px;
       margin: 0 auto;
-      padding: 120px 40px 80px;
+      padding: 100px 40px 80px;
       text-align: center;
     }
     h1 {
-      font-size: 5rem;
-      letter-spacing: 0.8em;
+      font-family: 'Impact', 'Arial Black', 'sans-serif'; /* boxy/blocky modern logo font */
+      font-size: 6rem;
+      font-weight: 900;
+      letter-spacing: 0.9em;
       text-transform: uppercase;
-      opacity: 0.6;
+      opacity: 0.7;
       margin-bottom: 140px;
+      line-height: 1;
+      -webkit-text-stroke: 1px var(--text); /* optional thin outline for extra blocky punch */
+      text-stroke: 1px var(--text);
     }
     .products {
       display: grid;
@@ -41,16 +45,22 @@
       position: relative;
       text-align: center;
     }
+    .main-link {
+      display: block;
+      text-decoration: none;
+    }
     .main-image {
       width: 100%;
       height: auto;
       display: block;
+      border: none !important;
+      box-shadow: none !important;
+      outline: none;
       transition: opacity 0.4s ease;
-      opacity: 1;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      opacity: 0.98; /* slight blend/soften if needed */
     }
     .product:hover .main-image {
-      opacity: 0.75;
+      opacity: 0.85;
     }
     .extra-images {
       display: flex;
@@ -69,7 +79,7 @@
       width: 45%;
       height: auto;
       display: block;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: none;
     }
     .item-code {
       font-size: 2.8rem;
@@ -101,7 +111,7 @@
     }
     @media (max-width: 768px) {
       .container { padding: 80px 20px 60px; }
-      h1 { font-size: 3.2rem; letter-spacing: 0.5em; margin-bottom: 100px; }
+      h1 { font-size: 4rem; letter-spacing: 0.6em; margin-bottom: 100px; }
       .products { gap: 60px; }
       .extra-images { flex-direction: column; gap: 16px; }
       .extra-img { width: 70%; margin: 0 auto; }
@@ -118,7 +128,9 @@
 
       <!-- 1. Cap 1 -->
       <div class="product">
-        <img src="products/cap1/stack.png" alt="Cap 1 Stack" class="main-image">
+        <a href="products/cap-1.html" class="main-link">
+          <img src="products/cap1/stack.png" alt="Cap 1 Stack" class="main-image">
+        </a>
         <div class="extra-images">
           <img src="products/cap1/back.png" alt="Cap 1 Back" class="extra-img">
           <img src="products/cap1/side.png" alt="Cap 1 Side" class="extra-img">
@@ -130,7 +142,9 @@
 
       <!-- 2. Blue Cap -->
       <div class="product">
-        <img src="products/blue-cap/front.png" alt="Blue Cap Front" class="main-image">
+        <a href="products/blue-cap.html" class="main-link">
+          <img src="products/blue-cap/front.png" alt="Blue Cap Front" class="main-image">
+        </a>
         <div class="extra-images">
           <img src="products/blue-cap/back.png" alt="Blue Cap Back" class="extra-img">
           <img src="products/blue-cap/side.png" alt="Blue Cap Side" class="extra-img">
@@ -142,7 +156,9 @@
 
       <!-- 3. Beanie -->
       <div class="product">
-        <img src="products/beanie/front flat.png" alt="Beanie Front Flat" class="main-image">
+        <a href="products/beanie.html" class="main-link">
+          <img src="products/beanie/front flat.png" alt="Beanie Front Flat" class="main-image">
+        </a>
         <div class="extra-images">
           <img src="products/beanie/detail.png" alt="Beanie Detail" class="extra-img">
           <img src="products/beanie/ghost.png" alt="Beanie Ghost" class="extra-img">
@@ -154,7 +170,9 @@
 
       <!-- 4. Grey T -->
       <div class="product">
-        <img src="products/grey-t/front.png" alt="Grey T Front" class="main-image">
+        <a href="products/grey-t.html" class="main-link">
+          <img src="products/grey-t/front.png" alt="Grey T Front" class="main-image">
+        </a>
         <div class="extra-images">
           <img src="products/grey-t/back.png" alt="Grey T Back" class="extra-img">
           <img src="products/grey-t/folded.png" alt="Grey T Folded" class="extra-img">
@@ -166,7 +184,9 @@
 
       <!-- 5. Yosemite T -->
       <div class="product">
-        <img src="products/yosemite-t/front.png" alt="Yosemite T Front" class="main-image">
+        <a href="products/yosemite-t.html" class="main-link">
+          <img src="products/yosemite-t/front.png" alt="Yosemite T Front" class="main-image">
+        </a>
         <div class="extra-images">
           <img src="products/yosemite-t/back.png" alt="Yosemite T Back" class="extra-img">
           <img src="products/yosemite-t/folded.png" alt="Yosemite T Folded" class="extra-img">
@@ -178,7 +198,9 @@
 
       <!-- 6. Sticker -->
       <div class="product">
-        <img src="products/sticker/mockup.png" alt="Sticker Mockup" class="main-image">
+        <a href="products/sticker.html" class="main-link">
+          <img src="products/sticker/mockup.png" alt="Sticker Mockup" class="main-image">
+        </a>
         <div class="item-code">STKR-01</div>
         <div class="sub">STICKER</div>
         <a href="https://your-buy-link-for-sticker.com" class="buy-link" target="_blank">Buy</a>
