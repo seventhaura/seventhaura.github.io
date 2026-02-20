@@ -6,12 +6,12 @@
   <title>SEVENTHAURA</title>
   <style>
     @font-face {
-  font-family: 'MainFont';
-  src: url('assets/main font.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+      font-family: 'MainFont';
+      src: url('assets/main font.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
     :root {
       --bg: #F5F2EB;
       --text: #111111;
@@ -25,41 +25,40 @@
       font-weight: 300;
       line-height: 1.2;
     }
-.container {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 40px) clamp(60px, 8vw, 80px);
-  text-align: center;
-  width: 100%;
-  overflow-x: hidden;
-}
-  h1 {
-  font-family: 'MainFont', 'Impact', 'Arial Black', sans-serif;
-  font-size: clamp(2.8rem, 10vw, 6rem);
-  font-weight: 900;
-  letter-spacing: clamp(0.2em, 3vw, 0.8em);
-  opacity: 0.75;
-  margin-bottom: clamp(40px, 8vw, 100px);
-  line-height: 1;
-  text-align: center;
-  width: 100%;
-  max-width: 95vw;
-  margin-left: auto;
-  margin-right: auto;
-  overflow-wrap: normal;
-  hyphens: none;
-  white-space: nowrap;
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: clamp(2.5rem, 9vw, 4.5rem);
-    letter-spacing: clamp(0.15em, 2.5vw, 0.5em);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 40px) clamp(60px, 8vw, 80px);
+      text-align: center;
+      width: 100%;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-family: 'MainFont', 'Impact', 'Arial Black', sans-serif;
+      font-size: clamp(2.8rem, 9vw, 6.5rem);
+      font-weight: 900;
+      letter-spacing: clamp(0.15em, 2.5vw, 0.8em);
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-bottom: clamp(40px, 8vw, 100px);
+      line-height: 1;
+      text-align: center;
+      width: 100%;
+      max-width: 95vw;
+      margin-left: auto;
+      margin-right: auto;
+      overflow-wrap: normal;
+      hyphens: none;
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: clamp(2.4rem, 8vw, 4.2rem);
+        letter-spacing: clamp(0.1em, 2vw, 0.4em);
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
     .products {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -75,37 +74,26 @@
     .main-image {
       width: 100%;
       height: auto;
-      border: none;
-      box-shadow: none;
-      outline: none;
-      background: transparent;
-      transition: opacity 0.4s ease;
-      opacity: 0.98;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      display: block;
+      max-height: 380px;
     }
-    .product:hover .main-image {
-      opacity: 1;
-    }
-    .extra-images {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 20px;
-      opacity: 1;
-      transform: translateY(15px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .product:hover .extra-images {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .extra-img {
-      width: 45%;
-      height: auto;
-      border: none;
-      box-shadow: none;
+    @media (max-width: 768px) {
+      .main-image {
+        aspect-ratio: 4 / 5;
+        max-height: 320px;
+      }
+      .extra-images {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .extra-img {
+        width: 48%;
+      }
     }
     .item-code {
-      font-family: "MainFont', 'Impact', 'Arial Black', sans-serif;
+      font-family: 'MainFont', 'Impact', 'Arial Black', sans-serif;
       font-weight: normal;
       font-size: 2.8rem;
       letter-spacing: 0.4em;
@@ -134,17 +122,12 @@
       background: var(--text);
       color: var(--bg);
     }
-@media (max-width: 768px) {
-  .container { 
-    padding: clamp(50px, 10vw, 80px) clamp(15px, 4vw, 20px) clamp(40px, 8vw, 60px); 
-  }
-  h1 { 
-    font-size: clamp(3rem, 14vw, 4.5rem);
-    letter-spacing: clamp(0.3em, 5vw, 0.6em);
-    margin-bottom: clamp(60px, 12vw, 100px);
-  }
-  .products { gap: 50px 30px; }
-}
+    @media (max-width: 768px) {
+      .container { 
+        padding: clamp(50px, 10vw, 80px) clamp(15px, 4vw, 20px) clamp(40px, 8vw, 60px); 
+      }
+      .products { gap: 60px 20px; }
+    }
   </style>
 </head>
 <body>
@@ -152,88 +135,90 @@
   <div class="container">
     <h1>SEVENTHAURA</h1>
 
-<div class="products">
+    <div class="products">
 
-  <!-- 1. Blue Cap -->
-  <div class="product">
-    <a href="products/blue-cap.html" class="main-link" target="_blank">
-      <img src="products/blue-cap/front.png" alt="Blue Cap Front" class="main-image">
-    </a>
-    <div class="extra-images">
-      <img src="products/blue-cap/back.png" alt="Blue Cap Back" class="extra-img">
-      <img src="products/blue-cap/side.png" alt="Blue Cap Side" class="extra-img">
+      <!-- 1. Blue Cap -->
+      <div class="product">
+        <a href="products/blue-cap.html" class="main-link" target="_blank">
+          <img src="products/blue-cap/front.png" alt="Blue Cap Front" class="main-image" loading="lazy">
+        </a>
+        <div class="extra-images">
+          <img src="products/blue-cap/back.png" alt="Blue Cap Back" class="extra-img" loading="lazy">
+          <img src="products/blue-cap/side.png" alt="Blue Cap Side" class="extra-img" loading="lazy">
+        </div>
+        <div class="item-code">BLUE-01</div>
+        <div class="sub">BLUE CAP</div>
+        <a href="https://your-checkout-link.com/blue-cap" class="buy-link" target="_blank">Buy Now</a>
+      </div>
+
+      <!-- 2. Orange Beanie -->
+      <div class="product">
+        <a href="products/beanie.html" class="main-link" target="_blank">
+          <img src="products/beanie/front flat.png" alt="Orange Beanie Front" class="main-image" loading="lazy">
+        </a>
+        <div class="extra-images">
+          <img src="products/beanie/detail.png" alt="Beanie Detail" class="extra-img" loading="lazy">
+          <img src="products/beanie/ghost.png" alt="Beanie Ghost" class="extra-img" loading="lazy">
+        </div>
+        <div class="item-code">BEAN-01</div>
+        <div class="sub">ORANGE BEANIE</div>
+        <a href="https://your-checkout-link.com/beanie" class="buy-link" target="_blank">Buy Now</a>
+      </div>
+
+      <!-- 3. Yosemite T -->
+      <div class="product">
+        <a href="products/yosemite-t.html" class="main-link" target="_blank">
+          <img src="products/yosemite-t/back.png" alt="Yosemite T Back" class="main-image" loading="lazy">
+        </a>
+        <div class="extra-images">
+          <img src="products/yosemite-t/front.png" alt="Yosemite T Front" class="extra-img" loading="lazy">
+          <img src="products/yosemite-t/folded.png" alt="Yosemite T Folded" class="extra-img" loading="lazy">
+        </div>
+        <div class="item-code">YOSE-01</div>
+        <div class="sub">YOSEMITE T</div>
+        <a href="https://your-checkout-link.com/yosemite-t" class="buy-link" target="_blank">Buy Now</a>
+      </div>
+
+      <!-- 4. Grey T -->
+      <div class="product">
+        <a href="products/grey-t.html" class="main-link" target="_blank">
+          <img src="products/grey-t/front.png" alt="Grey T Front" class="main-image" loading="lazy">
+        </a>
+        <div class="extra-images">
+          <img src="products/grey-t/back.png" alt="Grey T Back" class="extra-img" loading="lazy">
+          <img src="products/grey-t/folded.png" alt="Grey T Folded" class="extra-img" loading="lazy">
+        </div>
+        <div class="item-code">GREY-01</div>
+        <div class="sub">GREY T</div>
+        <a href="https://your-checkout-link.com/grey-t" class="buy-link" target="_blank">Buy Now</a>
+      </div>
+
+      <!-- 5. Black Hat -->
+      <div class="product">
+        <a href="products/cap-1.html" class="main-link" target="_blank">
+          <img src="products/cap1/side.png" alt="Black Hat Side" class="main-image" loading="lazy">
+        </a>
+        <div class="extra-images">
+          <img src="products/cap1/stack.png" alt="Black Hat Stack/Front" class="extra-img" loading="lazy">
+          <img src="products/cap1/back.png" alt="Black Hat Back" class="extra-img" loading="lazy">
+        </div>
+        <div class="item-code">CAP-01</div>
+        <div class="sub">BLACK HAT</div>
+        <a href="https://your-checkout-link.com/cap1" class="buy-link" target="_blank">Buy Now</a>
+      </div>
+
+      <!-- 6. Sticker -->
+      <div class="product">
+        <a href="products/sticker.html" class="main-link" target="_blank">
+          <img src="products/sticker/mockup.png" alt="Sticker Mockup" class="main-image" loading="lazy">
+        </a>
+        <div class="item-code">STKR-01</div>
+        <div class="sub">STICKER</div>
+        <a href="https://your-checkout-link.com/sticker" class="buy-link" target="_blank">Buy Now</a>
+      </div>
+
     </div>
-    <div class="item-code">BLUE-01</div>
-    <div class="sub">BLUE CAP</div>
-    <a href="https://your-checkout-link.com/blue-cap" class="buy-link" target="_blank">Buy Now</a>
   </div>
 
-  <!-- 2. Orange Beanie -->
-  <div class="product">
-    <a href="products/beanie.html" class="main-link" target="_blank">
-      <img src="products/beanie/front flat.png" alt="Orange Beanie Front" class="main-image">
-    </a>
-    <div class="extra-images">
-      <img src="products/beanie/detail.png" alt="Beanie Detail" class="extra-img">
-      <img src="products/beanie/ghost.png" alt="Beanie Ghost" class="extra-img">
-    </div>
-    <div class="item-code">BEAN-01</div>
-    <div class="sub">ORANGE BEANIE</div>
-    <a href="https://your-checkout-link.com/beanie" class="buy-link" target="_blank">Buy Now</a>
-  </div>
-
-  <!-- 3. Yosemite T – back as main (your preference) -->
-  <div class="product">
-    <a href="products/yosemite-t.html" class="main-link" target="_blank">
-      <img src="products/yosemite-t/back.png" alt="Yosemite T Back" class="main-image">
-    </a>
-    <div class="extra-images">
-      <img src="products/yosemite-t/front.png" alt="Yosemite T Front" class="extra-img">
-      <img src="products/yosemite-t/folded.png" alt="Yosemite T Folded" class="extra-img">
-    </div>
-    <div class="item-code">YOSE-01</div>
-    <div class="sub">YOSEMITE T</div>
-    <a href="https://your-checkout-link.com/yosemite-t" class="buy-link" target="_blank">Buy Now</a>
-  </div>
-
-  <!-- 4. Grey T -->
-  <div class="product">
-    <a href="products/grey-t.html" class="main-link" target="_blank">
-      <img src="products/grey-t/front.png" alt="Grey T Front" class="main-image">
-    </a>
-    <div class="extra-images">
-      <img src="products/grey-t/back.png" alt="Grey T Back" class="extra-img">
-      <img src="products/grey-t/folded.png" alt="Grey T Folded" class="extra-img">
-    </div>
-    <div class="item-code">GREY-01</div>
-    <div class="sub">GREY T</div>
-    <a href="https://your-checkout-link.com/grey-t" class="buy-link" target="_blank">Buy Now</a>
-  </div>
-
-  <!-- 5. Black Hat – side as main (your preference) -->
-  <div class="product">
-    <a href="products/cap-1.html" class="main-link" target="_blank">
-      <img src="products/cap1/side.png" alt="Black Hat Side" class="main-image">
-    </a>
-    <div class="extra-images">
-      <img src="products/cap1/stack.png" alt="Black Hat Stack/Front" class="extra-img">
-      <img src="products/cap1/back.png" alt="Black Hat Back" class="extra-img">
-    </div>
-    <div class="item-code">CAP-01</div>
-    <div class="sub">BLACK HAT</div>
-    <a href="https://your-checkout-link.com/cap1" class="buy-link" target="_blank">Buy Now</a>
-  </div>
-
-  <!-- 6. Sticker -->
-  <div class="product">
-    <a href="products/sticker.html" class="main-link" target="_blank">
-      <img src="products/sticker/mockup.png" alt="Sticker Mockup" class="main-image">
-    </a>
-    <div class="item-code">STKR-01</div>
-    <div class="sub">STICKER</div>
-    <a href="https://your-checkout-link.com/sticker" class="buy-link" target="_blank">Buy Now</a>
-  </div>
-
-</div>
 </body>
 </html>
