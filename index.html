@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SEVENTHAURA</title>
+  <script src="https://js.stripe.com/v3/"></script> <!-- Stripe.js for Checkout -->
   <style>
     @font-face {
       font-family: 'MainFont';
@@ -77,23 +78,23 @@
       transition: transform 0.3s ease, opacity 0.3s ease;
     }
     .product:hover .product-content {
-      transform: translateY(-4px); /* Reduced from -6px for less aggression */
+      transform: translateY(-4px);
       opacity: 0.92;
     }
     .main-image {
       width: 100%;
-      max-width: 90%; /* Prevents full takeover on wide desktops */
+      max-width: 90%;
       height: auto;
       display: block;
-      margin: 0 auto; /* Centers if smaller */
+      margin: 0 auto;
       object-fit: contain;
-      max-height: 320px; /* Reduced from 380px to make images less dominant */
+      max-height: 320px;
     }
     @media (max-width: 768px) {
       .main-image {
         max-width: 100%;
         aspect-ratio: 4 / 5;
-        max-height: 280px; /* Slightly tighter on mobile */
+        max-height: 280px;
       }
       .extra-images {
         flex-wrap: wrap;
@@ -129,6 +130,7 @@
       padding: 12px 30px;
       transition: all 0.4s;
       margin-top: 16px;
+      cursor: pointer;
     }
     .buy-link:hover {
       background: var(--text);
@@ -162,7 +164,7 @@
             <div class="sub">BLUE CAP</div>
           </div>
         </a>
-        <a href="https://your-checkout-link.com/blue-cap" class="buy-link" target="_blank" rel="noopener noreferrer">Buy Now</a>
+        <button id="buy-blue-cap" class="buy-link">Buy Now</button>
       </div>
 
       <!-- 2. Orange Beanie -->
@@ -178,7 +180,7 @@
             <div class="sub">ORANGE BEANIE</div>
           </div>
         </a>
-        <a href="https://your-checkout-link.com/beanie" class="buy-link" target="_blank" rel="noopener noreferrer">Buy Now</a>
+        <button id="buy-beanie" class="buy-link">Buy Now</button>
       </div>
 
       <!-- 3. Yosemite T -->
@@ -194,7 +196,7 @@
             <div class="sub">YOSEMITE T</div>
           </div>
         </a>
-        <a href="https://your-checkout-link.com/yosemite-t" class="buy-link" target="_blank" rel="noopener noreferrer">Buy Now</a>
+        <button id="buy-yosemite" class="buy-link">Buy Now</button>
       </div>
 
       <!-- 4. Grey T -->
@@ -210,7 +212,7 @@
             <div class="sub">GREY T</div>
           </div>
         </a>
-        <a href="https://your-checkout-link.com/grey-t" class="buy-link" target="_blank" rel="noopener noreferrer">Buy Now</a>
+        <button id="buy-grey" class="buy-link">Buy Now</button>
       </div>
 
       <!-- 5. Black Hat -->
@@ -226,7 +228,7 @@
             <div class="sub">BLACK HAT</div>
           </div>
         </a>
-        <a href="https://your-checkout-link.com/cap1" class="buy-link" target="_blank" rel="noopener noreferrer">Buy Now</a>
+        <button id="buy-black-hat" class="buy-link">Buy Now</button>
       </div>
 
       <!-- 6. Sticker -->
@@ -238,11 +240,95 @@
             <div class="sub">STICKER</div>
           </div>
         </a>
-        <a href="https://your-checkout-link.com/sticker" class="buy-link" target="_blank" rel="noopener noreferrer">Buy Now</a>
+        <button id="buy-sticker" class="buy-link">Buy Now</button>
       </div>
 
     </div>
   </div>
+
+  <script>
+    // Initialize Stripe with your LIVE publishable key
+    // REPLACE THIS WITH YOUR ACTUAL LIVE KEY FROM DASHBOARD → Developers → API keys
+    const stripe = Stripe('pk_live_YourLivePublishableKeyHere');
+
+    // Blue Cap
+    document.getElementById('buy-blue-cap').addEventListener('click', async () => {
+      const { error } = await stripe.redirectToCheckout({
+        lineItems: [{ price: 'price_1T34cBFXCt2LBqPzro9o5wZY', quantity: 1 }],
+        mode: 'payment',
+        successUrl: 'https://seventhaura.com/success.html',
+        cancelUrl: 'https://seventhaura.com/',
+      });
+      if (error) {
+        alert(error.message);
+      }
+    });
+
+    // Orange Beanie
+    document.getElementById('buy-beanie').addEventListener('click', async () => {
+      const { error } = await stripe.redirectToCheckout({
+        lineItems: [{ price: 'price_1T34emFXCt2LBqPzXFZVavV8', quantity: 1 }],
+        mode: 'payment',
+        successUrl: 'https://seventhaura.com/success.html',
+        cancelUrl: 'https://seventhaura.com/',
+      });
+      if (error) {
+        alert(error.message);
+      }
+    });
+
+    // Yosemite T
+    document.getElementById('buy-yosemite').addEventListener('click', async () => {
+      const { error } = await stripe.redirectToCheckout({
+        lineItems: [{ price: 'price_1T34gWFXCt2LBqPzwqtmSIZr', quantity: 1 }],
+        mode: 'payment',
+        successUrl: 'https://seventhaura.com/success.html',
+        cancelUrl: 'https://seventhaura.com/',
+      });
+      if (error) {
+        alert(error.message);
+      }
+    });
+
+    // Grey T
+    document.getElementById('buy-grey').addEventListener('click', async () => {
+      const { error } = await stripe.redirectToCheckout({
+        lineItems: [{ price: 'price_1T34ikFXCt2LBqPzvzLErOut', quantity: 1 }],
+        mode: 'payment',
+        successUrl: 'https://seventhaura.com/success.html',
+        cancelUrl: 'https://seventhaura.com/',
+      });
+      if (error) {
+        alert(error.message);
+      }
+    });
+
+    // Black Hat
+    document.getElementById('buy-black-hat').addEventListener('click', async () => {
+      const { error } = await stripe.redirectToCheckout({
+        lineItems: [{ price: 'price_1T34lxFXCt2LBqPzbZGGVMYf', quantity: 1 }],
+        mode: 'payment',
+        successUrl: 'https://seventhaura.com/success.html',
+        cancelUrl: 'https://seventhaura.com/',
+      });
+      if (error) {
+        alert(error.message);
+      }
+    });
+
+    // Sticker
+    document.getElementById('buy-sticker').addEventListener('click', async () => {
+      const { error } = await stripe.redirectToCheckout({
+        lineItems: [{ price: 'price_1T34tUFXCt2LBqPz56qk2XlR', quantity: 1 }],
+        mode: 'payment',
+        successUrl: 'https://seventhaura.com/success.html',
+        cancelUrl: 'https://seventhaura.com/',
+      });
+      if (error) {
+        alert(error.message);
+      }
+    });
+  </script>
 
 </body>
 </html>
