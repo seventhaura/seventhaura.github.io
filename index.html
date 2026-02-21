@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SEVENTHAURA</title>
-  <script src="https://js.stripe.com/v3/"></script> <!-- Stripe.js for Checkout -->
+  <script src="https://js.stripe.com/v3/"></script> <!-- Optional now – kept for potential future use -->
   <style>
     @font-face {
       font-family: 'MainFont';
@@ -247,86 +247,38 @@
   </div>
 
   <script>
-    // Initialize Stripe with your LIVE publishable key
-    // REPLACE THIS WITH YOUR ACTUAL LIVE KEY FROM DASHBOARD → Developers → API keys
-    const stripe = Stripe('pk_live_YourLivePublishableKeyHere');
+    // Optional: Stripe.js is loaded but not used for payments anymore.
+    // You can keep it or remove the <script src="https://js.stripe.com/v3/"> line if you want.
+    // const stripe = Stripe('pk_live_...');  // ← add your real key here only if you add future features
 
     // Blue Cap
-    document.getElementById('buy-blue-cap').addEventListener('click', async () => {
-      const { error } = await stripe.redirectToCheckout({
-        lineItems: [{ price: 'price_1T34cBFXCt2LBqPzro9o5wZY', quantity: 1 }],
-        mode: 'payment',
-        successUrl: 'https://seventhaura.com/success.html',
-        cancelUrl: 'https://seventhaura.com/',
-      });
-      if (error) {
-        alert(error.message);
-      }
+    document.getElementById('buy-blue-cap').addEventListener('click', () => {
+      window.location.href = 'https://buy.stripe.com/aFa00jepT33KgII4n2bwk04';
     });
 
     // Orange Beanie
-    document.getElementById('buy-beanie').addEventListener('click', async () => {
-      const { error } = await stripe.redirectToCheckout({
-        lineItems: [{ price: 'price_1T34emFXCt2LBqPzXFZVavV8', quantity: 1 }],
-        mode: 'payment',
-        successUrl: 'https://seventhaura.com/success.html',
-        cancelUrl: 'https://seventhaura.com/',
-      });
-      if (error) {
-        alert(error.message);
-      }
+    document.getElementById('buy-beanie').addEventListener('click', () => {
+      window.location.href = 'https://buy.stripe.com/aFabJ1a9DgUAcsscTybwk03';
     });
 
     // Yosemite T
-    document.getElementById('buy-yosemite').addEventListener('click', async () => {
-      const { error } = await stripe.redirectToCheckout({
-        lineItems: [{ price: 'price_1T34gWFXCt2LBqPzwqtmSIZr', quantity: 1 }],
-        mode: 'payment',
-        successUrl: 'https://seventhaura.com/success.html',
-        cancelUrl: 'https://seventhaura.com/',
-      });
-      if (error) {
-        alert(error.message);
-      }
+    document.getElementById('buy-yosemite').addEventListener('click', () => {
+      window.location.href = 'https://buy.stripe.com/28EbJ16XrcEk2RS1aQbwk02';
     });
 
     // Grey T
-    document.getElementById('buy-grey').addEventListener('click', async () => {
-      const { error } = await stripe.redirectToCheckout({
-        lineItems: [{ price: 'price_1T34ikFXCt2LBqPzvzLErOut', quantity: 1 }],
-        mode: 'payment',
-        successUrl: 'https://seventhaura.com/success.html',
-        cancelUrl: 'https://seventhaura.com/',
-      });
-      if (error) {
-        alert(error.message);
-      }
+    document.getElementById('buy-grey').addEventListener('click', () => {
+      window.location.href = 'https://buy.stripe.com/5kQ8wP4Pj8o47882eUbwk01';
     });
 
     // Black Hat
-    document.getElementById('buy-black-hat').addEventListener('click', async () => {
-      const { error } = await stripe.redirectToCheckout({
-        lineItems: [{ price: 'price_1T34lxFXCt2LBqPzbZGGVMYf', quantity: 1 }],
-        mode: 'payment',
-        successUrl: 'https://seventhaura.com/success.html',
-        cancelUrl: 'https://seventhaura.com/',
-      });
-      if (error) {
-        alert(error.message);
-      }
+    document.getElementById('buy-black-hat').addEventListener('click', () => {
+      window.location.href = 'https://buy.stripe.com/5kQ4gz5Tn8o4644f1Gbwk00';
     });
 
     // Sticker
-    document.getElementById('buy-sticker').addEventListener('click', async () => {
-      const { error } = await stripe.redirectToCheckout({
-        lineItems: [{ price: 'price_1T34tUFXCt2LBqPz56qk2XlR', quantity: 1 }],
-        mode: 'payment',
-        successUrl: 'https://seventhaura.com/success.html',
-        cancelUrl: 'https://seventhaura.com/',
-      });
-      if (error) {
-        alert(error.message);
-      }
+    document.getElementById('buy-sticker').addEventListener('click', () => {
+      window.location.href = 'https://buy.stripe.com/4gM3cv6Xr9s8eAAf1Gbwk05';
     });
   </script>
 
