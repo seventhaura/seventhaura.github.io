@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - SEVENTHAURA</title>
+  <style>
+    :root {
+      --bg: #F5F2EB;
+      --text: #111111;
+      --sub: #666666;
+    }
+    @font-face {
+      font-family: 'MainFont';
+      src: url('assets/main font.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: clamp(80px, 12vw, 140px) clamp(20px, 6vw, 40px) clamp(60px, 10vw, 100px);
+      text-align: center;
+    }
+    h1 {
+      font-family: 'MainFont', 'Impact', 'Arial Black', sans-serif;
+      font-size: clamp(2.8rem, 9vw, 6rem);
+      letter-spacing: clamp(0.15em, 2.5vw, 0.6em);
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin: 0 0 60px;
+      line-height: 1;
+    }
+    .tagline {
+      font-size: clamp(1.4rem, 5vw, 2.2rem);
+      letter-spacing: 0.12em;
+      opacity: 0.85;
+      margin: 0 0 80px;
+      color: #333;
+    }
+    .contact-block {
+      font-size: clamp(1.3rem, 4.5vw, 2rem);
+      margin: 40px 0;
+    }
+    .email-link {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--text);
+      padding-bottom: 2px;
+      transition: all 0.3s ease;
+    }
+    .email-link:hover {
+      opacity: 0.7;
+      border-bottom-color: transparent;
+    }
+    .back {
+      display: inline-block;
+      margin-top: 80px;
+      color: var(--sub);
+      text-decoration: underline;
+      font-size: 1.1rem;
+    }
+    .back:hover {
+      color: var(--text);
+    }
 
+    @media (max-width: 768px) {
+      .container {
+        padding: clamp(60px, 12vw, 100px) 20px clamp(40px, 10vw, 80px);
+      }
+      h1 {
+        font-size: clamp(2.4rem, 10vw, 4.5rem);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>SEVENTHAURA</h1>
+    <div class="tagline">where art lives</div>
+
+    <div class="contact-block">
+      <a href="mailto:contact@seventhaura.com" class="email-link">
+        contact@seventhaura.com
+      </a>
+    </div>
+
+    <a href="/" class="back">← Back to Shop</a>
+  </div>
+
+</body>
+</html>
