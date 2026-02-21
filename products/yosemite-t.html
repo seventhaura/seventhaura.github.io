@@ -12,7 +12,7 @@
     }
     @font-face {
       font-family: 'MainFont';
-      src: url('../assets/main font.ttf') format('truetype'); /* adjust if path differs */
+      src: url('../assets/main font.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
       font-display: swap;
@@ -71,7 +71,7 @@
       object-fit: contain;
       display: block;
     }
-    .buy-button {
+    .notify-button {
       display: inline-block;
       background: var(--text);
       color: var(--bg);
@@ -84,7 +84,7 @@
       transition: all 0.4s ease;
       cursor: pointer;
     }
-    .buy-button:hover {
+    .notify-button:hover {
       background: transparent;
       color: var(--text);
     }
@@ -155,7 +155,7 @@
     @media (max-width: 768px) {
       .container { padding: clamp(30px, 8vw, 60px) 15px; }
       .gallery { gap: 16px; }
-      .buy-button { padding: 14px 36px; font-size: 1rem; }
+      .notify-button { padding: 14px 36px; font-size: 1rem; }
     }
   </style>
 </head>
@@ -165,7 +165,7 @@
 
     <h1>YOSEMITE T</h1>
     <div class="item-code">YOSE-01</div>
-    <div class="price">$40.00</div>
+    <div class="price">SOLD OUT</div>
 
     <div class="description">
       Premium graphic tee inspired by Yosemite landscapes. Soft 100% cotton jersey with bold print on back and small logo on front. Unisex fit, true to size. Machine washable.
@@ -177,7 +177,9 @@
       <img src="/products/yosemite-t/folded.png" alt="Yosemite T Folded" loading="lazy">
     </div>
 
-    <a href="#" class="buy-button" id="buy-yosemite">Buy Now – $40.00</a>
+    <a href="mailto:contact@seventhaura.com?subject=Notify%20Me%20-%20Yosemite%20T%20(YOSE-01)&body=Hi%20SEVENTHAURA%20team,%0A%0AI%20would%20like%20to%20be%20notified%20when%20the%20Yosemite%20T%20(YOSE-01)%20is%20back%20in%20stock.%0A%0AName:%20%0AEmail:%20%0APreferred%20size:%20%0A%0AThank%20you!" class="notify-button" id="notify-yosemite">
+      Notify Me When Available
+    </a>
 
     <p class="sales-notice">
       All sales are final. No refunds, returns, or exchanges on art, custom, or merchandise items. Please review sizing, details, and order carefully before purchasing.
@@ -200,11 +202,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('buy-yosemite').addEventListener('click', (e) => {
-      e.preventDefault();
-      window.location.href = 'https://buy.stripe.com/28EbJ16XrcEk2RS1aQbwk02';
-    });
-  </script>
+  <!-- No script needed anymore since it's a mailto: link -->
 </body>
 </html>
