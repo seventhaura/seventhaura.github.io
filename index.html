@@ -67,9 +67,18 @@
     .product {
       text-align: center;
     }
-    .main-link {
+    .product-link {
       display: block;
       text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+    .product-content {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .product:hover .product-content {
+      transform: translateY(-6px);
+      opacity: 0.92;
     }
     .main-image {
       width: 100%;
@@ -117,6 +126,7 @@
       border: 1px solid var(--text);
       padding: 12px 30px;
       transition: all 0.4s;
+      margin-top: 16px;
     }
     .buy-link:hover {
       background: var(--text);
@@ -139,82 +149,94 @@
 
       <!-- 1. Blue Cap -->
       <div class="product">
-        <a href="products/blue-cap.html" class="main-link" target="_blank">
-          <img src="products/blue-cap/front.png" alt="Blue Cap Front" class="main-image" loading="lazy">
+        <a href="products/blue-cap.html" class="product-link" target="_blank">
+          <div class="product-content">
+            <img src="products/blue-cap/front.png" alt="Blue Cap Front" class="main-image" loading="lazy">
+            <div class="extra-images">
+              <img src="products/blue-cap/back.png" alt="Blue Cap Back" class="extra-img" loading="lazy">
+              <img src="products/blue-cap/side.png" alt="Blue Cap Side" class="extra-img" loading="lazy">
+            </div>
+            <div class="item-code">BLUE-01</div>
+            <div class="sub">BLUE CAP</div>
+          </div>
         </a>
-        <div class="extra-images">
-          <img src="products/blue-cap/back.png" alt="Blue Cap Back" class="extra-img" loading="lazy">
-          <img src="products/blue-cap/side.png" alt="Blue Cap Side" class="extra-img" loading="lazy">
-        </div>
-        <div class="item-code">BLUE-01</div>
-        <div class="sub">BLUE CAP</div>
-        <a href="https://your-checkout-link.com/blue-cap" class="buy-link" target="_blank">Buy Now</a>
+        <a href="https://your-checkout-link.com/blue-cap" class="buy-link" target="_blank" rel="noopener noreferrer">Buy Now</a>
       </div>
 
       <!-- 2. Orange Beanie -->
       <div class="product">
-        <a href="products/beanie.html" class="main-link" target="_blank">
-          <img src="products/beanie/front flat.png" alt="Orange Beanie Front" class="main-image" loading="lazy">
+        <a href="products/beanie.html" class="product-link" target="_blank">
+          <div class="product-content">
+            <img src="products/beanie/front flat.png" alt="Orange Beanie Front" class="main-image" loading="lazy">
+            <div class="extra-images">
+              <img src="products/beanie/detail.png" alt="Beanie Detail" class="extra-img" loading="lazy">
+              <img src="products/beanie/ghost.png" alt="Beanie Ghost" class="extra-img" loading="lazy">
+            </div>
+            <div class="item-code">BEAN-01</div>
+            <div class="sub">ORANGE BEANIE</div>
+          </div>
         </a>
-        <div class="extra-images">
-          <img src="products/beanie/detail.png" alt="Beanie Detail" class="extra-img" loading="lazy">
-          <img src="products/beanie/ghost.png" alt="Beanie Ghost" class="extra-img" loading="lazy">
-        </div>
-        <div class="item-code">BEAN-01</div>
-        <div class="sub">ORANGE BEANIE</div>
-        <a href="https://your-checkout-link.com/beanie" class="buy-link" target="_blank">Buy Now</a>
+        <a href="https://your-checkout-link.com/beanie" class="buy-link" target="_blank" rel="noopener noreferrer">Buy Now</a>
       </div>
 
       <!-- 3. Yosemite T -->
       <div class="product">
-        <a href="products/yosemite-t.html" class="main-link" target="_blank">
-          <img src="products/yosemite-t/back.png" alt="Yosemite T Back" class="main-image" loading="lazy">
+        <a href="products/yosemite-t.html" class="product-link" target="_blank">
+          <div class="product-content">
+            <img src="products/yosemite-t/back.png" alt="Yosemite T Back" class="main-image" loading="lazy">
+            <div class="extra-images">
+              <img src="products/yosemite-t/front.png" alt="Yosemite T Front" class="extra-img" loading="lazy">
+              <img src="products/yosemite-t/folded.png" alt="Yosemite T Folded" class="extra-img" loading="lazy">
+            </div>
+            <div class="item-code">YOSE-01</div>
+            <div class="sub">YOSEMITE T</div>
+          </div>
         </a>
-        <div class="extra-images">
-          <img src="products/yosemite-t/front.png" alt="Yosemite T Front" class="extra-img" loading="lazy">
-          <img src="products/yosemite-t/folded.png" alt="Yosemite T Folded" class="extra-img" loading="lazy">
-        </div>
-        <div class="item-code">YOSE-01</div>
-        <div class="sub">YOSEMITE T</div>
-        <a href="https://your-checkout-link.com/yosemite-t" class="buy-link" target="_blank">Buy Now</a>
+        <a href="https://your-checkout-link.com/yosemite-t" class="buy-link" target="_blank" rel="noopener noreferrer">Buy Now</a>
       </div>
 
       <!-- 4. Grey T -->
       <div class="product">
-        <a href="products/grey-t.html" class="main-link" target="_blank">
-          <img src="products/grey-t/front.png" alt="Grey T Front" class="main-image" loading="lazy">
+        <a href="products/grey-t.html" class="product-link" target="_blank">
+          <div class="product-content">
+            <img src="products/grey-t/front.png" alt="Grey T Front" class="main-image" loading="lazy">
+            <div class="extra-images">
+              <img src="products/grey-t/back.png" alt="Grey T Back" class="extra-img" loading="lazy">
+              <img src="products/grey-t/folded.png" alt="Grey T Folded" class="extra-img" loading="lazy">
+            </div>
+            <div class="item-code">GREY-01</div>
+            <div class="sub">GREY T</div>
+          </div>
         </a>
-        <div class="extra-images">
-          <img src="products/grey-t/back.png" alt="Grey T Back" class="extra-img" loading="lazy">
-          <img src="products/grey-t/folded.png" alt="Grey T Folded" class="extra-img" loading="lazy">
-        </div>
-        <div class="item-code">GREY-01</div>
-        <div class="sub">GREY T</div>
-        <a href="https://your-checkout-link.com/grey-t" class="buy-link" target="_blank">Buy Now</a>
+        <a href="https://your-checkout-link.com/grey-t" class="buy-link" target="_blank" rel="noopener noreferrer">Buy Now</a>
       </div>
 
       <!-- 5. Black Hat -->
       <div class="product">
-        <a href="products/cap-1.html" class="main-link" target="_blank">
-          <img src="products/cap1/side.png" alt="Black Hat Side" class="main-image" loading="lazy">
+        <a href="products/cap-1.html" class="product-link" target="_blank">
+          <div class="product-content">
+            <img src="products/cap1/side.png" alt="Black Hat Side" class="main-image" loading="lazy">
+            <div class="extra-images">
+              <img src="products/cap1/stack.png" alt="Black Hat Stack/Front" class="extra-img" loading="lazy">
+              <img src="products/cap1/back.png" alt="Black Hat Back" class="extra-img" loading="lazy">
+            </div>
+            <div class="item-code">CAP-01</div>
+            <div class="sub">BLACK HAT</div>
+          </div>
         </a>
-        <div class="extra-images">
-          <img src="products/cap1/stack.png" alt="Black Hat Stack/Front" class="extra-img" loading="lazy">
-          <img src="products/cap1/back.png" alt="Black Hat Back" class="extra-img" loading="lazy">
-        </div>
-        <div class="item-code">CAP-01</div>
-        <div class="sub">BLACK HAT</div>
-        <a href="https://your-checkout-link.com/cap1" class="buy-link" target="_blank">Buy Now</a>
+        <a href="https://your-checkout-link.com/cap1" class="buy-link" target="_blank" rel="noopener noreferrer">Buy Now</a>
       </div>
 
       <!-- 6. Sticker -->
       <div class="product">
-        <a href="products/sticker.html" class="main-link" target="_blank">
-          <img src="products/sticker/mockup.png" alt="Sticker Mockup" class="main-image" loading="lazy">
+        <a href="products/sticker.html" class="product-link" target="_blank">
+          <div class="product-content">
+            <img src="products/sticker/mockup.png" alt="Sticker Mockup" class="main-image" loading="lazy">
+            <div class="item-code">STKR-01</div>
+            <div class="sub">STICKER</div>
+          </div>
         </a>
-        <div class="item-code">STKR-01</div>
-        <div class="sub">STICKER</div>
-        <a href="https://your-checkout-link.com/sticker" class="buy-link" target="_blank">Buy Now</a>
+        <a href="https://your-checkout-link.com/sticker" class="buy-link" target="_blank" rel="noopener noreferrer">Buy Now</a>
       </div>
 
     </div>
