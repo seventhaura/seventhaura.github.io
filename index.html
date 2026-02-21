@@ -136,7 +136,7 @@
       opacity: 0.6;
       margin-bottom: 20px;
     }
-    .buy-link {
+    .buy-link, .notify-link {
       display: inline-block;
       color: var(--text);
       font-size: 1rem;
@@ -149,7 +149,7 @@
       margin-top: 16px;
       cursor: pointer;
     }
-    .buy-link:hover {
+    .buy-link:hover, .notify-link:hover {
       background: var(--text);
       color: var(--bg);
     }
@@ -275,7 +275,7 @@
             <div class="sub">YOSEMITE T</div>
           </div>
         </a>
-        <button id="buy-yosemite" class="buy-link">Buy Now</button>
+        <a href="mailto:contact@seventhaura.com?subject=Notify%20Me%20-%20Yosemite%20T%20(YOSE-01)&body=Hi%20SEVENTHAURA%20team,%0A%0AI%20would%20like%20to%20be%20notified%20when%20the%20Yosemite%20T%20(YOSE-01)%20is%20back%20in%20stock.%0A%0AName:%20%0AEmail:%20%0APreferred%20size:%20%0A%0AThank%20you!" class="notify-link">Notify Me When Available</a>
       </div>
 
       <!-- 4. Grey T -->
@@ -291,7 +291,7 @@
             <div class="sub">GREY T</div>
           </div>
         </a>
-        <button id="buy-grey" class="buy-link">Buy Now</button>
+        <a href="mailto:contact@seventhaura.com?subject=Notify%20Me%20-%20Grey%20T%20(GREY-01)&body=Hi%20SEVENTHAURA%20team,%0A%0AI%20would%20like%20to%20be%20notified%20when%20the%20Grey%20T%20(GREY-01)%20is%20back%20in%20stock.%0A%0AName:%20%0AEmail:%20%0APreferred%20size:%20%0A%0AThank%20you!" class="notify-link">Notify Me When Available</a>
       </div>
 
       <!-- 5. Black Hat -->
@@ -326,17 +326,12 @@
   </div>
 
   <script>
+    // Only keep JS for products that still use Stripe Payment Links
     document.getElementById('buy-blue-cap').addEventListener('click', () => {
       window.location.href = 'https://buy.stripe.com/aFa00jepT33KgII4n2bwk04';
     });
     document.getElementById('buy-beanie').addEventListener('click', () => {
       window.location.href = 'https://buy.stripe.com/aFabJ1a9DgUAcsscTybwk03';
-    });
-    document.getElementById('buy-yosemite').addEventListener('click', () => {
-      window.location.href = 'https://buy.stripe.com/28EbJ16XrcEk2RS1aQbwk02';
-    });
-    document.getElementById('buy-grey').addEventListener('click', () => {
-      window.location.href = 'https://buy.stripe.com/5kQ8wP4Pj8o47882eUbwk01';
     });
     document.getElementById('buy-black-hat').addEventListener('click', () => {
       window.location.href = 'https://buy.stripe.com/5kQ4gz5Tn8o4644f1Gbwk00';
