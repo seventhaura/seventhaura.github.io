@@ -77,21 +77,23 @@
       transition: transform 0.3s ease, opacity 0.3s ease;
     }
     .product:hover .product-content {
-      transform: translateY(-6px);
+      transform: translateY(-4px); /* Reduced from -6px for less aggression */
       opacity: 0.92;
     }
     .main-image {
       width: 100%;
+      max-width: 90%; /* Prevents full takeover on wide desktops */
       height: auto;
-      aspect-ratio: 1 / 1;
-      object-fit: contain;
       display: block;
-      max-height: 380px;
+      margin: 0 auto; /* Centers if smaller */
+      object-fit: contain;
+      max-height: 320px; /* Reduced from 380px to make images less dominant */
     }
     @media (max-width: 768px) {
       .main-image {
+        max-width: 100%;
         aspect-ratio: 4 / 5;
-        max-height: 320px;
+        max-height: 280px; /* Slightly tighter on mobile */
       }
       .extra-images {
         flex-wrap: wrap;
