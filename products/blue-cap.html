@@ -58,6 +58,27 @@
       margin: 0 auto 40px;
       font-size: 1.15rem;
       color: #444;
+      text-align: center;
+    }
+    .description ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 24px auto 0;
+      max-width: 580px;
+      text-align: left;
+      font-size: 1.05rem;
+    }
+    .description ul li {
+      margin: 12px 0;
+      position: relative;
+      padding-left: 24px;
+    }
+    .description ul li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--text);
+      font-weight: bold;
     }
     .gallery {
       display: grid;
@@ -103,7 +124,6 @@
       margin-left: auto;
       margin-right: auto;
     }
-
     /* Footer styles (consistent with main page) */
     footer {
       margin-top: clamp(60px, 10vw, 120px);
@@ -151,7 +171,6 @@
     .legal-notice p {
       margin: 8px 0;
     }
-
     @media (max-width: 768px) {
       .container { padding: clamp(30px, 8vw, 60px) 15px; }
       .gallery { gap: 16px; }
@@ -162,44 +181,45 @@
 <body>
   <div class="container">
     <a href="/" class="back">← Back to Shop</a>
-
     <h1>BLUE CAP</h1>
     <div class="item-code">BLUE-01</div>
     <div class="price">$35.00</div>
-
     <div class="description">
-      Classic unstructured 6-panel cap in deep blue with subtle embroidered SEVENTHAURA logo. Adjustable strapback for custom fit. 100% cotton twill construction. One size fits most. Limited release.
+      SEVENTHAURA embroidered across the front in deep blue. Turn it around and the understated power reveals itself: “i am art .” stitched in the same vibrant blue on the back, a reminder for you to carry with you.<br><br>
+      Classic structured 5 panel cap in soft, timeless beige. Mid profile fit. Slightly curved visor. Adjustable snap closure that locks in your chosen shape. Matching undervisor and sweatband for that polished, cohesive feel.<br><br>
+      Built on the reliable OTTO foundation; clean lines, comfortable all day wear, ready for whatever canvas the day becomes.<br><br>
+      One size fits most. Limited release.<br><br>
+      <ul>
+        <li>65% polyester / 35% cotton blend front panels for durable, comfortable wear that holds shape and feels soft against the skin</li>
+        <li>Mid-profile, contoured fit with a structured, firm front panel.</li>
+        <li>Custom embroidery: SEVENTHAURA boldly on the front and "i am art." on the back, both in vibrant blue thread</li>
+        <li>6 sewn eyelets for enhanced breathability and all-day comfort</li>
+        <li>Adjustable plastic snap closure for a secure, customizable fit</li>
+      </ul>
     </div>
-
     <div class="gallery">
       <img src="/products/blue-cap/front.png" alt="Blue Cap Front" loading="lazy">
       <img src="/products/blue-cap/back.png" alt="Blue Cap Back" loading="lazy">
       <img src="/products/blue-cap/side.png" alt="Blue Cap Side" loading="lazy">
     </div>
-
     <a href="#" class="buy-button" id="buy-blue-cap">Buy Now – $35.00</a>
-
     <p class="sales-notice">
       All sales are final. No refunds, returns, or exchanges on art, custom, or merchandise items. Please review sizing, details, and order carefully before purchasing.
     </p>
   </div>
-
   <footer>
     <div class="social-links">
       <a href="https://www.instagram.com/seventhaura" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
       <a href="https://www.youtube.com/@seventhaura" target="_blank" rel="noopener noreferrer" class="social-link">YouTube</a>
     </div>
-
     <div class="contact-info">
       <p>Contact: <a href="mailto:contact@seventhaura.com">contact@seventhaura.com</a></p>
     </div>
-
     <div class="legal-notice">
       <p>All sales are final. No refunds, returns, or exchanges on art, custom, or merchandise items. Please review your order carefully before purchase.</p>
       <p>© SEVENTHAURA. All rights reserved.</p>
     </div>
   </footer>
-
   <script>
     document.getElementById('buy-blue-cap').addEventListener('click', (e) => {
       e.preventDefault();
