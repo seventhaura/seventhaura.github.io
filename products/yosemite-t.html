@@ -22,7 +22,7 @@
       color: var(--text);
       font-family: 'Helvetica Neue', Arial, sans-serif;
       font-weight: 300;
-      line-height: 1.5;
+      line-height: 1.6;
       margin: 0;
       padding: 0;
     }
@@ -53,11 +53,56 @@
       font-weight: bold;
       margin: 16px 0 32px;
     }
+    .hero-image {
+      max-width: 500px;
+      width: 90%;
+      margin: 0 auto 48px;
+      display: block;
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
     .description {
-      max-width: 700px;
-      margin: 0 auto 40px;
+      max-width: 760px;
+      margin: 0 auto 48px;
       font-size: 1.15rem;
-      color: #444;
+      color: #333;
+      text-align: center;
+    }
+    .description p {
+      margin: 0 0 1.4em;
+    }
+    .specs {
+      max-width: 760px;
+      margin: 0 auto 48px;
+      font-size: 1.15rem;
+      color: #333;
+      text-align: center;
+    }
+    .specs ul {
+      list-style: none;
+      padding: 0;
+      margin: 2rem auto 0;
+      max-width: 620px;
+      text-align: left;
+    }
+    .specs ul li {
+      margin: 1rem 0;
+      position: relative;
+      padding-left: 1.8rem;
+      font-size: 1.05rem;
+    }
+    .specs ul li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--text);
+      font-size: 1.4rem;
+      line-height: 1;
     }
     .gallery {
       display: grid;
@@ -103,8 +148,6 @@
       margin-left: auto;
       margin-right: auto;
     }
-
-    /* Footer styles */
     footer {
       margin-top: clamp(60px, 10vw, 120px);
       padding: 40px 20px 60px;
@@ -151,10 +194,10 @@
     .legal-notice p {
       margin: 8px 0;
     }
-
     @media (max-width: 768px) {
       .container { padding: clamp(30px, 8vw, 60px) 15px; }
       .gallery { gap: 16px; }
+      .hero-image { max-width: 400px; margin-bottom: 32px; }
       .notify-button { padding: 14px 36px; font-size: 1rem; }
     }
   </style>
@@ -162,19 +205,44 @@
 <body>
   <div class="container">
     <a href="/" class="back">← Back to Shop</a>
-
     <h1>YOSEMITE T</h1>
     <div class="item-code">YOSE-01</div>
     <div class="price">SOLD OUT</div>
 
+    <!-- Hero / main photo under price (between SOLD OUT and description) -->
+    <div class="hero-image">
+      <img src="/products/yosemite-t/back.png" alt="Yosemite T Back – Full Yosemite Sunset Print at Dusk" loading="lazy">
+    </div>
+
     <div class="description">
-      Premium graphic tee inspired by Yosemite landscapes. Soft 100% cotton jersey with bold print on back and small logo on front. Unisex fit, true to size. Machine washable.
+      <p>At SEVENTHAURA, we believe art lives within every soul, within you. It's not just something you create—it's who you are. We exist to affirm that truth, to remind you (and the world) to embrace your creative essence and pursue your one wild and precious life boldly. Every piece we make is a quiet invitation: see the beauty around you, carry your inner art outward, and live as the masterpiece you already are.</p>
+
+      <p>This premium graphic tee inspired by Yosemite landscapes captures that invitation in wearable form.</p>
+
+      <p>Crafted from 100% organic combed ring spun cotton (5.9 oz/yd², 200 g/m²) for ultra soft, breathable comfort and sustainable durability. The relaxed oversized fit features dropped shoulders, set in sleeves, wide neck, and reinforced double needle stitching on sleeves and hem—perfect for effortless layering or standalone style.</p>
+
+      <p>On the front: SEVENTHAURA in clean white DTF print across the chest.</p>
+
+      <p>On the back: A striking full frame DTF print of a Yosemite sunset captured by Steven on August 15, 2020, 6:52 PM at 1/2.8 30mm f/2.8 ISO 500.</p>
     </div>
 
     <div class="gallery">
-      <img src="/products/yosemite-t/back.png" alt="Yosemite T Back" loading="lazy">
-      <img src="/products/yosemite-t/front.png" alt="Yosemite T Front" loading="lazy">
-      <img src="/products/yosemite-t/folded.png" alt="Yosemite T Folded" loading="lazy">
+      <img src="/products/yosemite-t/front.png" alt="Yosemite T Front – SEVENTHAURA White Print" loading="lazy">
+      <img src="/products/yosemite-t/back.png" alt="Yosemite T Back – Yosemite Sunset Landscape" loading="lazy">
+      <img src="/products/yosemite-t/folded.png" alt="Yosemite T Folded View" loading="lazy">
+    </div>
+
+    <div class="specs">
+      <ul>
+        <li>100% organic combed ring-spun cotton (5.9 oz/yd², 200 g/m²) for premium softness, breathability, and eco-conscious durability</li>
+        <li>Oversized fit with dropped shoulders and set-in sleeves for relaxed, modern streetwear style</li>
+        <li>Custom DTF print: SEVENTHAURA in white on the front chest</li>
+        <li>Custom full back DTF print: Yosemite sunset landscape</li>
+        <li>Wide neck with 1 × 1 rib at collar</li>
+        <li>Double needle topstitch on sleeves and bottom hems for added strength and clean finish</li>
+        <li>Self fabric neck tape on the inside back for extra comfort</li>
+        <li>Fabric certified under GOTS (Global Organic Textile Standard) and OCS (Organic Content Standard)</li>
+      </ul>
     </div>
 
     <a href="mailto:contact@seventhaura.com?subject=Notify%20Me%20-%20Yosemite%20T%20(YOSE-01)&body=Hi%20SEVENTHAURA%20team,%0A%0AI%20would%20like%20to%20be%20notified%20when%20the%20Yosemite%20T%20(YOSE-01)%20is%20back%20in%20stock.%0A%0AName:%20%0AEmail:%20%0APreferred%20size:%20%0A%0AThank%20you!" class="notify-button" id="notify-yosemite">
@@ -191,17 +259,13 @@
       <a href="https://www.instagram.com/seventhaura" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
       <a href="https://www.youtube.com/@seventhaura" target="_blank" rel="noopener noreferrer" class="social-link">YouTube</a>
     </div>
-
     <div class="contact-info">
       <p>Contact: <a href="mailto:contact@seventhaura.com">contact@seventhaura.com</a></p>
     </div>
-
     <div class="legal-notice">
       <p>All sales are final. No refunds, returns, or exchanges on art, custom, or merchandise items. Please review your order carefully before purchase.</p>
       <p>© SEVENTHAURA. All rights reserved.</p>
     </div>
   </footer>
-
-  <!-- No script needed anymore since it's a mailto: link -->
 </body>
 </html>
