@@ -12,7 +12,7 @@
     }
     @font-face {
       font-family: 'MainFont';
-      src: url('../assets/main font.ttf') format('truetype'); /* adjust if path differs */
+      src: url('../assets/main font.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
       font-display: swap;
@@ -51,7 +51,20 @@
     .price {
       font-size: 2.2rem;
       font-weight: bold;
-      margin: 16px 0 40px;
+      margin: 16px 0 32px;
+    }
+    .hero-image {
+      max-width: 500px;
+      width: 90%;
+      margin: 0 auto 48px;
+      display: block;
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px; /* optional subtle rounding */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* optional light shadow for pop */
     }
     .description {
       max-width: 760px;
@@ -184,6 +197,7 @@
     @media (max-width: 768px) {
       .container { padding: clamp(30px, 8vw, 60px) 15px; }
       .gallery { gap: 16px; }
+      .hero-image { max-width: 400px; margin-bottom: 32px; }
       .buy-button { padding: 14px 36px; font-size: 1rem; }
     }
   </style>
@@ -194,6 +208,11 @@
     <h1>BLACK HAT</h1>
     <div class="item-code">CAP-01</div>
     <div class="price">$30.00</div>
+
+    <!-- Duplicated main/hero photo under price -->
+    <div class="hero-image">
+      <img src="/products/cap1/stack.png" alt="Black Dad Hat Front – SEVENTHAURA in White Embroidery" loading="lazy">
+    </div>
 
     <div class="description">
       <p>Timeless black dad hat crafted from 100% cotton chino twill for soft, breathable comfort and everyday durability. The unstructured, low profile crown delivers that relaxed, easy dad hat fit, with a pre curved visor, six embroidered eyelets for ventilation, and an adjustable antique brass buckle strap.</p>
@@ -209,7 +228,6 @@
 
     <div class="gallery">
       <img src="/products/cap1/side.png" alt="Black Dad Hat Side View – Unstructured Relaxed Fit" loading="lazy">
-      <img src="/products/cap1/stack.png" alt="Black Dad Hat Front – SEVENTHAURA in White Embroidery" loading="lazy">
       <img src="/products/cap1/back.png" alt="Black Dad Hat Back – 'i am art.' Embroidery" loading="lazy">
     </div>
 
