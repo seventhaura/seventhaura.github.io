@@ -51,7 +51,20 @@
     .price {
       font-size: 2.2rem;
       font-weight: bold;
-      margin: 16px 0 40px;
+      margin: 16px 0 32px;
+    }
+    .hero-image {
+      max-width: 500px;
+      width: 90%;
+      margin: 0 auto 48px;
+      display: block;
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
     .description {
       max-width: 760px;
@@ -63,20 +76,27 @@
     .description p {
       margin: 0 0 1.4em;
     }
-    .description ul {
+    .specs {
+      max-width: 760px;
+      margin: 0 auto 48px;
+      font-size: 1.15rem;
+      color: #333;
+      text-align: center;
+    }
+    .specs ul {
       list-style: none;
       padding: 0;
       margin: 2rem auto 0;
       max-width: 620px;
       text-align: left;
     }
-    .description ul li {
+    .specs ul li {
       margin: 1rem 0;
       position: relative;
       padding-left: 1.8rem;
       font-size: 1.05rem;
     }
-    .description ul li:before {
+    .specs ul li:before {
       content: "•";
       position: absolute;
       left: 0;
@@ -177,6 +197,7 @@
     @media (max-width: 768px) {
       .container { padding: clamp(30px, 8vw, 60px) 15px; }
       .gallery { gap: 16px; }
+      .hero-image { max-width: 400px; margin-bottom: 32px; }
       .buy-button { padding: 14px 36px; font-size: 1rem; }
     }
   </style>
@@ -188,26 +209,31 @@
     <div class="item-code">BEAN-01</div>
     <div class="price">$35.00</div>
 
+    <!-- Hero / main photo under price -->
+    <div class="hero-image">
+      <img src="/products/beanie/front flat.png" alt="Orange Fisherman Beanie Front – SEVENTHAURA in Bold White Embroidery" loading="lazy">
+    </div>
+
     <div class="description">
       <p>The classic fisherman style features a wide cuffed brim with SEVENTHAURA embroidered across the front in bold white.</p>
-
       <p>Made with a chunky, textured knit that holds its shape and traps heat for all day comfort.</p>
-
       <p>One size fits most with plenty of stretch. Perfect for everyday wear.</p>
-
-      <ul>
-        <li>100% acrylic knit for excellent warmth, lightweight insulation, and soft, comfortable feel against the skin</li>
-        <li>Wide, ribbed knit construction with textured depth that holds shape and adds cozy style</li>
-        <li>Snug, stretchy fit that stays secure without feeling tight,one size fits most</li>
-        <li>Versatile fisherman style design pairs easily with casual outfits, jackets, or everyday looks</li>
-        <li>Custom embroidery: SEVENTHAURA in bold white thread on the wide cuffed brim for a clean, standout branded finish</li>
-      </ul>
     </div>
 
     <div class="gallery">
       <img src="/products/beanie/front flat.png" alt="Orange Fisherman Beanie Front – SEVENTHAURA Embroidery" loading="lazy">
       <img src="/products/beanie/detail.png" alt="Beanie Cuff Detail – Bold White Embroidery" loading="lazy">
       <img src="/products/beanie/ghost.png" alt="Orange Beanie Ghost View" loading="lazy">
+    </div>
+
+    <div class="specs">
+      <ul>
+        <li>100% acrylic knit for excellent warmth, lightweight insulation, and soft, comfortable feel against the skin</li>
+        <li>Wide, ribbed knit construction with textured depth that holds shape and adds cozy style</li>
+        <li>Snug, stretchy fit that stays secure without feeling tight, one size fits most</li>
+        <li>Versatile fisherman style design pairs easily with casual outfits, jackets, or everyday looks</li>
+        <li>Custom embroidery: SEVENTHAURA in bold white thread on the wide cuffed brim for a clean, standout branded finish</li>
+      </ul>
     </div>
 
     <a href="#" class="buy-button" id="buy-beanie">Buy Now – $35.00</a>
