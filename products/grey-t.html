@@ -22,7 +22,7 @@
       color: var(--text);
       font-family: 'Helvetica Neue', Arial, sans-serif;
       font-weight: 300;
-      line-height: 1.5;
+      line-height: 1.6;
       margin: 0;
       padding: 0;
     }
@@ -53,11 +53,56 @@
       font-weight: bold;
       margin: 16px 0 32px;
     }
+    .hero-image {
+      max-width: 500px;
+      width: 90%;
+      margin: 0 auto 48px;
+      display: block;
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
     .description {
-      max-width: 700px;
-      margin: 0 auto 40px;
+      max-width: 760px;
+      margin: 0 auto 48px;
       font-size: 1.15rem;
-      color: #444;
+      color: #333;
+      text-align: center;
+    }
+    .description p {
+      margin: 0 0 1.4em;
+    }
+    .specs {
+      max-width: 760px;
+      margin: 0 auto 48px;
+      font-size: 1.15rem;
+      color: #333;
+      text-align: center;
+    }
+    .specs ul {
+      list-style: none;
+      padding: 0;
+      margin: 2rem auto 0;
+      max-width: 620px;
+      text-align: left;
+    }
+    .specs ul li {
+      margin: 1rem 0;
+      position: relative;
+      padding-left: 1.8rem;
+      font-size: 1.05rem;
+    }
+    .specs ul li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--text);
+      font-size: 1.4rem;
+      line-height: 1;
     }
     .gallery {
       display: grid;
@@ -103,8 +148,6 @@
       margin-left: auto;
       margin-right: auto;
     }
-
-    /* Footer styles */
     footer {
       margin-top: clamp(60px, 10vw, 120px);
       padding: 40px 20px 60px;
@@ -151,10 +194,10 @@
     .legal-notice p {
       margin: 8px 0;
     }
-
     @media (max-width: 768px) {
       .container { padding: clamp(30px, 8vw, 60px) 15px; }
       .gallery { gap: 16px; }
+      .hero-image { max-width: 400px; margin-bottom: 32px; }
       .notify-button { padding: 14px 36px; font-size: 1rem; }
     }
   </style>
@@ -162,19 +205,37 @@
 <body>
   <div class="container">
     <a href="/" class="back">← Back to Shop</a>
-
     <h1>GREY T</h1>
     <div class="item-code">GREY-01</div>
     <div class="price">SOLD OUT</div>
 
+    <!-- Hero / main photo under price (between SOLD OUT and description) -->
+    <div class="hero-image">
+      <img src="/products/grey-t/front.png" alt="Grey T Front – Subtle SEVENTHAURA Branding with 'i am art' Detail" loading="lazy">
+    </div>
+
     <div class="description">
-      Clean minimalist grey tee with subtle SEVENTHAURA branding. Premium heavyweight cotton for durability and comfort. Relaxed unisex fit. Built to last.
+      <p>Clean minimalist grey tee with subtle SEVENTHAURA branding.</p>
+
+      <p>Made from 100% organic combed ring-spun cotton (5.9 oz/yd², 200 g/m²) for soft, breathable feel and eco-conscious durability. The relaxed oversized fit features dropped shoulders, set-in sleeves, wide neck, and double-needle topstitching on sleeves and hem for that effortless, modern look.</p>
+
+      <p>At SEVENTHAURA, we believe art lives within every soul, within you. This tee is a wearable reminder to embrace that truth: affirm your creative essence with "i am art" close to your heart, and carry the invitation to pursue your one wild and precious life boldly.</p>
     </div>
 
     <div class="gallery">
-      <img src="/products/grey-t/front.png" alt="Grey T Front" loading="lazy">
-      <img src="/products/grey-t/back.png" alt="Grey T Back" loading="lazy">
+      <img src="/products/grey-t/front.png" alt="Grey T Front View" loading="lazy">
+      <img src="/products/grey-t/back.png" alt="Grey T Back View" loading="lazy">
       <img src="/products/grey-t/folded.png" alt="Grey T Folded" loading="lazy">
+    </div>
+
+    <div class="specs">
+      <ul>
+        <li>100% organic combed ring-spun cotton (5.9 oz/yd², 200 g/m²)</li>
+        <li>Relaxed oversized fit with dropped shoulders and wide neck</li>
+        <li>Set-in sleeves and double-needle topstitching on sleeves and hem</li>
+        <li>Subtle SEVENTHAURA branding + "i am art" affirmation detail</li>
+        <li>Eco-conscious, soft, breathable, and durable construction</li>
+      </ul>
     </div>
 
     <a href="mailto:contact@seventhaura.com?subject=Notify%20Me%20-%20Grey%20T%20(GREY-01)&body=Hi%20SEVENTHAURA%20team,%0A%0AI%20would%20like%20to%20be%20notified%20when%20the%20Grey%20T%20(GREY-01)%20is%20back%20in%20stock.%0A%0AName:%20%0AEmail:%20%0APreferred%20size:%20%0A%0AThank%20you!" class="notify-button">
@@ -191,11 +252,9 @@
       <a href="https://www.instagram.com/seventhaura" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
       <a href="https://www.youtube.com/@seventhaura" target="_blank" rel="noopener noreferrer" class="social-link">YouTube</a>
     </div>
-
     <div class="contact-info">
       <p>Contact: <a href="mailto:contact@seventhaura.com">contact@seventhaura.com</a></p>
     </div>
-
     <div class="legal-notice">
       <p>All sales are final. No refunds, returns, or exchanges on art, custom, or merchandise items. Please review your order carefully before purchase.</p>
       <p>© SEVENTHAURA. All rights reserved.</p>
