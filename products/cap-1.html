@@ -22,7 +22,7 @@
       color: var(--text);
       font-family: 'Helvetica Neue', Arial, sans-serif;
       font-weight: 300;
-      line-height: 1.5;
+      line-height: 1.6;
       margin: 0;
       padding: 0;
     }
@@ -51,13 +51,38 @@
     .price {
       font-size: 2.2rem;
       font-weight: bold;
-      margin: 16px 0 32px;
+      margin: 16px 0 40px;
     }
     .description {
-      max-width: 700px;
-      margin: 0 auto 40px;
+      max-width: 760px;
+      margin: 0 auto 48px;
       font-size: 1.15rem;
-      color: #444;
+      color: #333;
+      text-align: center;
+    }
+    .description p {
+      margin: 0 0 1.4em;
+    }
+    .description ul {
+      list-style: none;
+      padding: 0;
+      margin: 2rem auto 0;
+      max-width: 620px;
+      text-align: left;
+    }
+    .description ul li {
+      margin: 1rem 0;
+      position: relative;
+      padding-left: 1.8rem;
+      font-size: 1.05rem;
+    }
+    .description ul li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--text);
+      font-size: 1.4rem;
+      line-height: 1;
     }
     .gallery {
       display: grid;
@@ -103,8 +128,6 @@
       margin-left: auto;
       margin-right: auto;
     }
-
-    /* Footer styles (consistent with main page) */
     footer {
       margin-top: clamp(60px, 10vw, 120px);
       padding: 40px 20px 60px;
@@ -151,7 +174,6 @@
     .legal-notice p {
       margin: 8px 0;
     }
-
     @media (max-width: 768px) {
       .container { padding: clamp(30px, 8vw, 60px) 15px; }
       .gallery { gap: 16px; }
@@ -162,19 +184,36 @@
 <body>
   <div class="container">
     <a href="/" class="back">← Back to Shop</a>
-
     <h1>BLACK HAT</h1>
     <div class="item-code">CAP-01</div>
     <div class="price">$30.00</div>
 
     <div class="description">
-      All-black classic cap with tonal SEVENTHAURA embroidery. Structured 6-panel design with adjustable strapback. Durable cotton twill. Versatile everyday essential.
+      <p>Timeless black dad hat crafted from 100% cotton chino twill for soft, breathable comfort and everyday durability. The unstructured, low profile crown delivers that relaxed, easy dad hat fit, with a pre curved visor, six embroidered eyelets for ventilation, and an adjustable antique brass buckle strap.</p>
+
+      <p>SEVENTHAURA embroidered cleanly in white on the front. On the back: "i am art." in the same white thread. a small, personal affirmation.</p>
+
+      <p>At Seventhaura, we believe art lives within every soul, within you. This hat is a subtle way to carry that truth: a reminder to embrace your creative essence and pursue your one wild and precious life.</p>
+
+      <p>Simple, comfortable, and quietly branded perfect for daily wear, errands, or wherever your path takes you.</p>
+
+      <p>seventhaura, where art lives.<br>i am art.</p>
+
+      <ul>
+        <li>100% chino cotton twill (black version) for soft, breathable comfort and lasting durability</li>
+        <li>Unstructured, 6 panel, low profile design with relaxed fit and 3 ⅛” (7.6 cm) crown</li>
+        <li>Custom embroidery: SEVENTHAURA in white on the front panel</li>
+        <li>Back embroidery: "i am art." in white thread</li>
+        <li>6 embroidered eyelets for ventilation</li>
+        <li>Pre-curved visor</li>
+        <li>Adjustable strap with antique buckle closure</li>
+      </ul>
     </div>
 
     <div class="gallery">
-      <img src="/products/cap1/side.png" alt="Black Hat Side" loading="lazy">
-      <img src="/products/cap1/stack.png" alt="Black Hat Stack/Front" loading="lazy">
-      <img src="/products/cap1/back.png" alt="Black Hat Back" loading="lazy">
+      <img src="/products/cap1/side.png" alt="Black Dad Hat Side View – Unstructured Relaxed Fit" loading="lazy">
+      <img src="/products/cap1/stack.png" alt="Black Dad Hat Front – SEVENTHAURA in White Embroidery" loading="lazy">
+      <img src="/products/cap1/back.png" alt="Black Dad Hat Back – 'i am art.' Embroidery" loading="lazy">
     </div>
 
     <a href="#" class="buy-button" id="buy-black-hat">Buy Now – $30.00</a>
@@ -189,11 +228,9 @@
       <a href="https://www.instagram.com/seventhaura" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
       <a href="https://www.youtube.com/@seventhaura" target="_blank" rel="noopener noreferrer" class="social-link">YouTube</a>
     </div>
-
     <div class="contact-info">
       <p>Contact: <a href="mailto:contact@seventhaura.com">contact@seventhaura.com</a></p>
     </div>
-
     <div class="legal-notice">
       <p>All sales are final. No refunds, returns, or exchanges on art, custom, or merchandise items. Please review your order carefully before purchase.</p>
       <p>© SEVENTHAURA. All rights reserved.</p>
