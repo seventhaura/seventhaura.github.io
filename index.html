@@ -3,26 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
-  <!-- SEO & Social Improvements -->
-  <meta name="description" content="SEVENTHAURA — Limited art-inspired apparel and accessories. Shop exclusive drops now." />
-  <meta name="theme-color" content="#F5F2EB" />
-  <title>SEVENTHAURA – Limited Art Apparel & Accessories</title>
-  
-  <!-- Favicon (add your favicon.ico to the root folder) -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  
-  <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="SEVENTHAURA" />
-  <meta property="og:description" content="SEVENTHAURA — Limited art-inspired apparel and accessories. Shop exclusive drops now." />
-  <meta property="og:image" content="https://seventhaura.com/products/blue-cap/front.png" />
-  <meta property="og:url" content="https://seventhaura.com" />
-  <meta property="og:type" content="website" />
-
-  <script src="https://js.stripe.com/v3/" defer></script>
+  <meta name="description" content="SEVENTHAURA — Exclusive apparel and accessories. Shop limited drops now." />
+  <title>SEVENTHAURA</title>
+  <script src="https://js.stripe.com/v3/"></script>
   <link rel="preconnect" href="https://platform.twitter.com">
   <link rel="preconnect" href="https://twitter.com">
-
   <style>
     @font-face {
       font-family: 'MainFont';
@@ -90,21 +75,6 @@
         margin-bottom: clamp(40px, 10vw, 70px);
       }
     }
-
-    /* Product Hover Polish (Yeezy-style subtle lift) */
-    .product {
-      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .product:hover {
-      transform: translateY(-12px);
-    }
-    .main-image {
-      transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .product:hover .main-image {
-      transform: scale(1.04);
-    }
-
     .products {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -181,7 +151,7 @@
     .sub {
       font-size: 1.2rem;
       letter-spacing: 0.2em;
-      opacity: 0.75; /* Improved contrast */
+      opacity: 0.6;
       margin-bottom: 20px;
     }
     .buy-link, .notify-link {
@@ -202,13 +172,10 @@
       color: var(--bg);
     }
 
-    /* Tweets Preview Section */
-    .tweets-preview {
-      margin: clamp(80px, 10vw, 120px) auto;
-      max-width: 800px;
-      text-align: center;
-    }
-    .tweets-preview h2 a {
+    /* New: Simple "Latest Updates" link */
+    .updates-link {
+      display: block;
+      margin: clamp(80px, 10vw, 120px) auto clamp(60px, 8vw, 100px);
       font-family: 'MainFont', 'Impact', sans-serif;
       font-size: clamp(2rem, 5vw, 3.2rem);
       letter-spacing: 0.2em;
@@ -216,25 +183,12 @@
       opacity: 0.8;
       color: var(--text);
       text-decoration: none;
-      transition: opacity 0.3s;
+      transition: opacity 0.3s ease;
     }
-    .tweets-preview h2 a:hover {
+    .updates-link:hover {
       opacity: 1;
     }
-    .timeline-wrapper {
-      background: rgba(255,255,255,0.4);
-      border: 1px solid rgba(17,17,17,0.1);
-      border-radius: 12px;
-      padding: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-      min-height: 220px;
-    }
-    .fallback-note {
-      margin-top: 16px;
-      font-size: 0.95rem;
-      opacity: 0.65;
-      color: var(--text);
-    }
+
     footer {
       margin-top: clamp(60px, 10vw, 120px);
       padding: 40px 20px 60px;
@@ -310,7 +264,7 @@
     <h1>SEVENTHAURA</h1>
     
     <p class="brand-statement">
-      we believe art lives within every soul, within you. It's not just something you create it's who you are. We exist to affirm that truth, to remind you (and the world) to embrace your creative essence and pursue your one wild and precious life boldly. Every piece we make is a quiet invitation: see the beauty around you, carry your inner art outward, and live as the masterpiece you already are.
+      We believe art lives within every soul, within you. It's not just something you create it's who you are. We exist to affirm that truth, to remind you (and the world) to embrace your creative essence and pursue your one wild and precious life boldly. Every piece we make is a quiet invitation: see the beauty around you, carry your inner art outward, and live as the masterpiece you already are.
     </p>
 
     <div class="products">
@@ -318,216 +272,97 @@
       <div class="product">
         <a href="products/blue-cap.html" class="product-link" target="_blank" rel="noopener noreferrer">
           <div class="product-content">
-            <img src="products/blue-cap/front.png" 
-                 alt="SEVENTHAURA Blue Cap Front View - BLUE-01" 
-                 class="main-image" 
-                 loading="lazy" 
-                 decoding="async"
-                 width="360" 
-                 height="360">
+            <img src="products/blue-cap/front.png" alt="Blue Cap Front" class="main-image" loading="lazy">
             <div class="extra-images">
-              <img src="products/blue-cap/back.png" 
-                   alt="SEVENTHAURA Blue Cap Back View" 
-                   class="extra-img" 
-                   loading="lazy" 
-                   decoding="async"
-                   width="172" 
-                   height="172">
-              <img src="products/blue-cap/side.png" 
-                   alt="SEVENTHAURA Blue Cap Side View" 
-                   class="extra-img" 
-                   loading="lazy" 
-                   decoding="async"
-                   width="172" 
-                   height="172">
+              <img src="products/blue-cap/back.png" alt="Blue Cap Back" class="extra-img" loading="lazy">
+              <img src="products/blue-cap/side.png" alt="Blue Cap Side" class="extra-img" loading="lazy">
             </div>
             <div class="item-code">BLUE-01</div>
             <div class="sub">BLUE CAP</div>
           </div>
         </a>
-        <button id="buy-blue-cap" class="buy-link" type="button">Buy Now</button>
+        <button id="buy-blue-cap" class="buy-link">Buy Now</button>
       </div>
-
       <!-- 2. Orange Beanie -->
       <div class="product">
         <a href="products/beanie.html" class="product-link" target="_blank" rel="noopener noreferrer">
           <div class="product-content">
-            <img src="products/beanie/front flat.png" 
-                 alt="SEVENTHAURA Orange Beanie Front View - BEAN-01" 
-                 class="main-image" 
-                 loading="lazy" 
-                 decoding="async"
-                 width="360" 
-                 height="360">
+            <img src="products/beanie/front flat.png" alt="Orange Beanie Front" class="main-image" loading="lazy">
             <div class="extra-images">
-              <img src="products/beanie/detail.png" 
-                   alt="SEVENTHAURA Orange Beanie Detail" 
-                   class="extra-img" 
-                   loading="lazy" 
-                   decoding="async"
-                   width="172" 
-                   height="172">
-              <img src="products/beanie/ghost.png" 
-                   alt="SEVENTHAURA Orange Beanie Ghost View" 
-                   class="extra-img" 
-                   loading="lazy" 
-                   decoding="async"
-                   width="172" 
-                   height="172">
+              <img src="products/beanie/detail.png" alt="Beanie Detail" class="extra-img" loading="lazy">
+              <img src="products/beanie/ghost.png" alt="Beanie Ghost" class="extra-img" loading="lazy">
             </div>
             <div class="item-code">BEAN-01</div>
             <div class="sub">ORANGE BEANIE</div>
           </div>
         </a>
-        <button id="buy-beanie" class="buy-link" type="button">Buy Now</button>
+        <button id="buy-beanie" class="buy-link">Buy Now</button>
       </div>
-
       <!-- 3. Yosemite T -->
       <div class="product">
         <a href="products/yosemite-t.html" class="product-link" target="_blank" rel="noopener noreferrer">
           <div class="product-content">
-            <img src="products/yosemite-t/back.png" 
-                 alt="SEVENTHAURA Yosemite T Back View - YOSE-01" 
-                 class="main-image" 
-                 loading="lazy" 
-                 decoding="async"
-                 width="360" 
-                 height="360">
+            <img src="products/yosemite-t/back.png" alt="Yosemite T Back" class="main-image" loading="lazy">
             <div class="extra-images">
-              <img src="products/yosemite-t/front.png" 
-                   alt="SEVENTHAURA Yosemite T Front View" 
-                   class="extra-img" 
-                   loading="lazy" 
-                   decoding="async"
-                   width="172" 
-                   height="172">
-              <img src="products/yosemite-t/folded.png" 
-                   alt="SEVENTHAURA Yosemite T Folded View" 
-                   class="extra-img" 
-                   loading="lazy" 
-                   decoding="async"
-                   width="172" 
-                   height="172">
+              <img src="products/yosemite-t/front.png" alt="Yosemite T Front" class="extra-img" loading="lazy">
+              <img src="products/yosemite-t/folded.png" alt="Yosemite T Folded" class="extra-img" loading="lazy">
             </div>
             <div class="item-code">YOSE-01</div>
             <div class="sub">YOSEMITE T</div>
           </div>
         </a>
-        <a href="mailto:contact@seventhaura.com?subject=Notify%20Me%20-%20Yosemite%20T%20(YOSE-01)&body=Hi%20SEVENTHAURA%20team,%0A%0AI%20would%20like%20to%20be%20notified%20when%20the%20Yosemite%20T%20(YOSE-01)%20is%20back%20in%20stock.%0A%0AName:%20%0AEmail:%20%0APreferred%20size:%20%0A%0AThank%20you!" 
-           class="notify-link" 
-           rel="noopener noreferrer"
-           target="_blank">Notify Me When Available</a>
+        <a href="mailto:contact@seventhaura.com?subject=Notify%20Me%20-%20Yosemite%20T%20(YOSE-01)&body=Hi%20SEVENTHAURA%20team,%0A%0AI%20would%20like%20to%20be%20notified%20when%20the%20Yosemite%20T%20(YOSE-01)%20is%20back%20in%20stock.%0A%0AName:%20%0AEmail:%20%0APreferred%20size:%20%0A%0AThank%20you!" class="notify-link" rel="noopener noreferrer">Notify Me When Available</a>
       </div>
-
       <!-- 4. Grey T -->
       <div class="product">
         <a href="products/grey-t.html" class="product-link" target="_blank" rel="noopener noreferrer">
           <div class="product-content">
-            <img src="products/grey-t/front.png" 
-                 alt="SEVENTHAURA Grey T Front View - GREY-01" 
-                 class="main-image" 
-                 loading="lazy" 
-                 decoding="async"
-                 width="360" 
-                 height="360">
+            <img src="products/grey-t/front.png" alt="Grey T Front" class="main-image" loading="lazy">
             <div class="extra-images">
-              <img src="products/grey-t/back.png" 
-                   alt="SEVENTHAURA Grey T Back View" 
-                   class="extra-img" 
-                   loading="lazy" 
-                   decoding="async"
-                   width="172" 
-                   height="172">
-              <img src="products/grey-t/folded.png" 
-                   alt="SEVENTHAURA Grey T Folded View" 
-                   class="extra-img" 
-                   loading="lazy" 
-                   decoding="async"
-                   width="172" 
-                   height="172">
+              <img src="products/grey-t/back.png" alt="Grey T Back" class="extra-img" loading="lazy">
+              <img src="products/grey-t/folded.png" alt="Grey T Folded" class="extra-img" loading="lazy">
             </div>
             <div class="item-code">GREY-01</div>
             <div class="sub">GREY T</div>
           </div>
         </a>
-        <a href="mailto:contact@seventhaura.com?subject=Notify%20Me%20-%20Grey%20T%20(GREY-01)&body=Hi%20SEVENTHAURA%20team,%0A%0AI%20would%20like%20to%20be%20notified%20when%20the%20Grey%20T%20(GREY-01)%20is%20back%20in%20stock.%0A%0AName:%20%0AEmail:%20%0APreferred%20size:%20%0A%0AThank%20you!" 
-           class="notify-link" 
-           rel="noopener noreferrer"
-           target="_blank">Notify Me When Available</a>
+        <a href="mailto:contact@seventhaura.com?subject=Notify%20Me%20-%20Grey%20T%20(GREY-01)&body=Hi%20SEVENTHAURA%20team,%0A%0AI%20would%20like%20to%20be%20notified%20when%20the%20Grey%20T%20(GREY-01)%20is%20back%20in%20stock.%0A%0AName:%20%0AEmail:%20%0APreferred%20size:%20%0A%0AThank%20you!" class="notify-link" rel="noopener noreferrer">Notify Me When Available</a>
       </div>
-
       <!-- 5. Black Hat -->
       <div class="product">
         <a href="products/cap-1.html" class="product-link" target="_blank" rel="noopener noreferrer">
           <div class="product-content">
-            <img src="products/cap1/side.png" 
-                 alt="SEVENTHAURA Black Hat Side View - CAP-01" 
-                 class="main-image" 
-                 loading="lazy" 
-                 decoding="async"
-                 width="360" 
-                 height="360">
+            <img src="products/cap1/side.png" alt="Black Hat Side" class="main-image" loading="lazy">
             <div class="extra-images">
-              <img src="products/cap1/stack.png" 
-                   alt="SEVENTHAURA Black Hat Stack / Front View" 
-                   class="extra-img" 
-                   loading="lazy" 
-                   decoding="async"
-                   width="172" 
-                   height="172">
-              <img src="products/cap1/back.png" 
-                   alt="SEVENTHAURA Black Hat Back View" 
-                   class="extra-img" 
-                   loading="lazy" 
-                   decoding="async"
-                   width="172" 
-                   height="172">
+              <img src="products/cap1/stack.png" alt="Black Hat Stack/Front" class="extra-img" loading="lazy">
+              <img src="products/cap1/back.png" alt="Black Hat Back" class="extra-img" loading="lazy">
             </div>
             <div class="item-code">CAP-01</div>
             <div class="sub">BLACK HAT</div>
           </div>
         </a>
-        <button id="buy-black-hat" class="buy-link" type="button">Buy Now</button>
+        <button id="buy-black-hat" class="buy-link">Buy Now</button>
       </div>
-
       <!-- 6. Sticker -->
       <div class="product">
         <a href="products/sticker.html" class="product-link" target="_blank" rel="noopener noreferrer">
           <div class="product-content">
-            <img src="products/sticker/mockup.png" 
-                 alt="SEVENTHAURA Sticker Mockup - STKR-01" 
-                 class="main-image" 
-                 loading="lazy" 
-                 decoding="async"
-                 width="360" 
-                 height="360">
+            <img src="products/sticker/mockup.png" alt="Sticker Mockup" class="main-image" loading="lazy">
             <div class="item-code">STKR-01</div>
             <div class="sub">STICKER</div>
           </div>
         </a>
-        <button id="buy-sticker" class="buy-link" type="button">Buy Now</button>
+        <button id="buy-sticker" class="buy-link">Buy Now</button>
       </div>
     </div>
 
-    <!-- Tweets Preview Section -->
-    <section class="tweets-preview">
-      <h2><a href="/tweets.html" aria-label="View latest updates on our full X feed">LATEST UPDATES</a></h2>
-      <div class="timeline-wrapper">
-        <a class="twitter-timeline"
-           data-height="500"
-           data-theme="light"
-           data-chrome="noheader nofooter noborders"
-           href="https://twitter.com/seventhaura">Tweets by @seventhaura</a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>
-      <p class="fallback-note">
-        Live updates from X. If nothing appears, please log into X or visit the full feed above.
-      </p>
-    </section>
+    <!-- Simple link to your X profile -->
+    <a href="https://x.com/seventhaura" target="_blank" rel="noopener noreferrer" class="updates-link">
+      LATEST UPDATES
+    </a>
   </div>
 
   <script>
-    // Stripe buttons with optional chaining for safety
     document.getElementById('buy-blue-cap')?.addEventListener('click', () => {
       window.location.href = 'https://buy.stripe.com/aFa00jepT33KgII4n2bwk04';
     });
