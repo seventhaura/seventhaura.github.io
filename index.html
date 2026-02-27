@@ -32,7 +32,7 @@
     .container {
       max-width: 1600px;
       margin: 0 auto;
-      padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 40px) clamp(60px, 8vw, 80px);
+      padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 40px) clamp(40px, 6vw, 80px);
       text-align: center;
       width: 100%;
       overflow-x: hidden;
@@ -94,6 +94,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 80px 60px;
+      margin-bottom: clamp(40px, 6vw, 80px);
     }
     .product {
       text-align: center;
@@ -217,10 +218,10 @@
       opacity: 0.65;
     }
 
-    /* Latest Updates link – reduced bottom margin */
+    /* Latest Updates link */
     .updates-link {
       display: block;
-      margin: clamp(60px, 8vw, 100px) auto clamp(20px, 4vw, 40px); /* much tighter to footer area */
+      margin: clamp(60px, 8vw, 100px) auto clamp(20px, 4vw, 40px);
       font-family: 'MainFont', 'Impact', sans-serif;
       font-size: clamp(2rem, 5vw, 3.2rem);
       letter-spacing: 0.2em;
@@ -246,7 +247,7 @@
     }
 
     footer {
-      margin-top: clamp(40px, 6vw, 70px); /* reduced top padding */
+      margin-top: clamp(40px, 6vw, 70px);
       padding: 40px 20px 60px;
       text-align: center;
       font-size: 1rem;
@@ -306,7 +307,6 @@
     </p>
 
     <div class="products">
-      <!-- Your 6 products unchanged -->
       <!-- 1. Blue Cap -->
       <div class="product">
         <a href="products/blue-cap.html" class="product-link" target="_blank" rel="noopener noreferrer">
@@ -322,7 +322,71 @@
         </a>
         <button id="buy-blue-cap" class="buy-link">Buy Now</button>
       </div>
-      <!-- ... (the other 5 products remain exactly as in your code) ... -->
+
+      <!-- 2. Orange Beanie -->
+      <div class="product">
+        <a href="products/beanie.html" class="product-link" target="_blank" rel="noopener noreferrer">
+          <div class="product-content">
+            <img src="products/beanie/front flat.png" alt="Orange Beanie Front" class="main-image" loading="lazy">
+            <div class="extra-images">
+              <img src="products/beanie/detail.png" alt="Beanie Detail" class="extra-img" loading="lazy">
+              <img src="products/beanie/ghost.png" alt="Beanie Ghost" class="extra-img" loading="lazy">
+            </div>
+            <div class="item-code">BEAN-01</div>
+            <div class="sub">ORANGE BEANIE</div>
+          </div>
+        </a>
+        <button id="buy-beanie" class="buy-link">Buy Now</button>
+      </div>
+
+      <!-- 3. Yosemite T -->
+      <div class="product">
+        <a href="products/yosemite-t.html" class="product-link" target="_blank" rel="noopener noreferrer">
+          <div class="product-content">
+            <img src="products/yosemite-t/back.png" alt="Yosemite T Back" class="main-image" loading="lazy">
+            <div class="extra-images">
+              <img src="products/yosemite-t/front.png" alt="Yosemite T Front" class="extra-img" loading="lazy">
+              <img src="products/yosemite-t/folded.png" alt="Yosemite T Folded" class="extra-img" loading="lazy">
+            </div>
+            <div class="item-code">YOSE-01</div>
+            <div class="sub">YOSEMITE T</div>
+          </div>
+        </a>
+        <a href="mailto:contact@seventhaura.com?subject=Notify%20Me%20-%20Yosemite%20T%20(YOSE-01)&body=Hi%20SEVENTHAURA%20team,%0A%0AI%20would%20like%20to%20be%20notified%20when%20the%20Yosemite%20T%20(YOSE-01)%20is%20back%20in%20stock.%0A%0AName:%20%0AEmail:%20%0APreferred%20size:%20%0A%0AThank%20you!" class="notify-link" rel="noopener noreferrer">Notify Me When Available</a>
+      </div>
+
+      <!-- 4. Grey T -->
+      <div class="product">
+        <a href="products/grey-t.html" class="product-link" target="_blank" rel="noopener noreferrer">
+          <div class="product-content">
+            <img src="products/grey-t/front.png" alt="Grey T Front" class="main-image" loading="lazy">
+            <div class="extra-images">
+              <img src="products/grey-t/back.png" alt="Grey T Back" class="extra-img" loading="lazy">
+              <img src="products/grey-t/folded.png" alt="Grey T Folded" class="extra-img" loading="lazy">
+            </div>
+            <div class="item-code">GREY-01</div>
+            <div class="sub">GREY T</div>
+          </div>
+        </a>
+        <a href="mailto:contact@seventhaura.com?subject=Notify%20Me%20-%20Grey%20T%20(GREY-01)&body=Hi%20SEVENTHAURA%20team,%0A%0AI%20would%20like%20to%20be%20notified%20when%20the%20Grey%20T%20(GREY-01)%20is%20back%20in%20stock.%0A%0AName:%20%0AEmail:%20%0APreferred%20size:%20%0A%0AThank%20you!" class="notify-link" rel="noopener noreferrer">Notify Me When Available</a>
+      </div>
+
+      <!-- 5. Black Hat -->
+      <div class="product">
+        <a href="products/cap-1.html" class="product-link" target="_blank" rel="noopener noreferrer">
+          <div class="product-content">
+            <img src="products/cap1/side.png" alt="Black Hat Side" class="main-image" loading="lazy">
+            <div class="extra-images">
+              <img src="products/cap1/stack.png" alt="Black Hat Stack/Front" class="extra-img" loading="lazy">
+              <img src="products/cap1/back.png" alt="Black Hat Back" class="extra-img" loading="lazy">
+            </div>
+            <div class="item-code">CAP-01</div>
+            <div class="sub">BLACK HAT</div>
+          </div>
+        </a>
+        <button id="buy-black-hat" class="buy-link">Buy Now</button>
+      </div>
+
       <!-- 6. Sticker -->
       <div class="product">
         <a href="products/sticker.html" class="product-link" target="_blank" rel="noopener noreferrer">
@@ -336,7 +400,7 @@
       </div>
     </div>
 
-    <!-- Email Capture Form (kept) -->
+    <!-- Email Capture Form -->
     <section class="email-capture">
       <h2>Get Notified of New Drops</h2>
       <form action="https://formspree.io/f/mwvnzeon" method="POST">
@@ -352,7 +416,7 @@
       LATEST UPDATES
     </a>
 
-    <!-- New small brand line above socials -->
+    <!-- Small brand tagline above socials -->
     <p class="footer-brand">seventhaura, where art lives.</p>
   </div>
 
