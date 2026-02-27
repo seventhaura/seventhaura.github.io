@@ -44,7 +44,7 @@
       letter-spacing: clamp(0.15em, 2.5vw, 0.8em);
       text-transform: uppercase;
       opacity: 0.75;
-      margin-bottom: clamp(20px, 4vw, 40px);
+      margin-bottom: clamp(16px, 3vw, 28px); /* tighter spacing under title */
       line-height: 1;
       text-align: center;
       width: 100%;
@@ -52,27 +52,22 @@
       margin-left: auto;
       margin-right: auto;
     }
-    .brand-statement {
+    .brand-message {
       max-width: 820px;
-      margin: 0 auto clamp(50px, 8vw, 90px);
+      margin: 0 auto clamp(40px, 6vw, 70px);
       font-size: clamp(1.05rem, 2.5vw, 1.25rem);
-      line-height: 1.65;
-      letter-spacing: 0.02em;
-      opacity: 0.72;
+      line-height: 1.6;
+      letter-spacing: 0.03em;
+      opacity: 0.78;
       font-weight: 300;
       color: var(--text);
       text-align: center;
     }
     @media (max-width: 768px) {
-      h1 {
-        font-size: clamp(2.4rem, 8vw, 4.2rem);
-        letter-spacing: clamp(0.1em, 2vw, 0.4em);
-        white-space: nowrap;
-        overflow: hidden;
-      }
-      .brand-statement {
+      h1 { margin-bottom: clamp(12px, 4vw, 20px); }
+      .brand-message {
         font-size: clamp(0.98rem, 3.2vw, 1.12rem);
-        margin-bottom: clamp(40px, 10vw, 70px);
+        margin-bottom: clamp(30px, 8vw, 50px);
       }
     }
 
@@ -128,9 +123,7 @@
       .extra-images { flex-wrap: wrap; gap: 8px; max-width: 100%; }
       .extra-img { width: 48%; }
       .products { gap: 60px 20px; }
-      .container {
-        padding: clamp(50px, 10vw, 80px) clamp(15px, 4vw, 20px) clamp(40px, 8vw, 60px);
-      }
+      .container { padding: clamp(50px, 10vw, 80px) clamp(15px, 4vw, 20px) clamp(40px, 8vw, 60px); }
     }
     @media (min-width: 1024px) {
       .main-image { max-width: 380px !important; max-height: 380px !important; }
@@ -170,59 +163,10 @@
       color: var(--bg);
     }
 
-    /* Email Capture Form */
-    .email-capture {
-      margin: clamp(60px, 8vw, 100px) auto;
-      max-width: 620px;
-      padding: 50px 30px;
-      background: rgba(255,255,255,0.3);
-      border: 1px solid rgba(17,17,17,0.08);
-      border-radius: 16px;
-    }
-    .email-capture h2 {
-      font-family: 'MainFont', 'Impact', sans-serif;
-      font-size: clamp(1.8rem, 4.5vw, 2.8rem);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      opacity: 0.85;
-      margin-bottom: 28px;
-    }
-    .email-capture input[type="email"] {
-      width: 100%;
-      max-width: 420px;
-      padding: 16px 20px;
-      font-size: 1.05rem;
-      border: 1px solid var(--text);
-      background: transparent;
-      color: var(--text);
-      border-radius: 6px;
-      margin-bottom: 20px;
-    }
-    .email-capture button {
-      padding: 16px 48px;
-      background: var(--text);
-      color: var(--bg);
-      border: none;
-      font-size: 1rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: all 0.3s;
-    }
-    .email-capture button:hover {
-      background: #000;
-    }
-    .email-capture p {
-      margin-top: 20px;
-      font-size: 0.9rem;
-      opacity: 0.65;
-    }
-
-    /* Simple "Latest Updates" link to X */
+    /* Latest Updates link – reduced bottom margin */
     .updates-link {
       display: block;
-      margin: clamp(60px, 8vw, 100px) auto clamp(60px, 8vw, 100px);
+      margin: clamp(60px, 8vw, 100px) auto clamp(30px, 5vw, 50px); /* tighter spacing to footer */
       font-family: 'MainFont', 'Impact', sans-serif;
       font-size: clamp(2rem, 5vw, 3.2rem);
       letter-spacing: 0.2em;
@@ -236,8 +180,20 @@
       opacity: 1;
     }
 
+    /* Small follow prompt above socials */
+    .follow-prompt {
+      display: block;
+      margin: 0 auto 32px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.65;
+      color: var(--text);
+    }
+
     footer {
-      margin-top: clamp(60px, 10vw, 120px);
+      margin-top: clamp(40px, 6vw, 70px); /* reduced top margin */
       padding: 40px 20px 60px;
       text-align: center;
       font-size: 1rem;
@@ -292,12 +248,11 @@
   <div class="container">
     <h1>SEVENTHAURA</h1>
     
-    <p class="brand-statement">
-      We believe art lives within every soul, within you. It's not just something you create it's who you are. We exist to affirm that truth, to remind you (and the world) to embrace your creative essence and pursue your one wild and precious life boldly. Every piece we make is a quiet invitation: see the beauty around you, carry your inner art outward, and live as the masterpiece you already are.
+    <p class="brand-message">
+      seventhaura, where art lives.
     </p>
 
     <div class="products">
-      <!-- Your 6 products (unchanged) -->
       <!-- 1. Blue Cap -->
       <div class="product">
         <a href="products/blue-cap.html" class="product-link" target="_blank" rel="noopener noreferrer">
@@ -386,37 +341,14 @@
       </div>
     </div>
 
-    <!-- Email Capture Form (using your Formspree link) -->
-    <section class="email-capture">
-      <h2>Get Notified of New Drops</h2>
-      <form action="https://formspree.io/f/mwvnzeon" method="POST">
-        <input type="email" name="email" placeholder="your@email.com" required>
-        <input type="hidden" name="_subject" value="New Notify Me Signup – SEVENTHAURA">
-        <button type="submit">Notify Me</button>
-      </form>
-      <p>We respect your privacy — only drop notifications, no spam.</p>
-    </section>
-
-    <!-- Simple link to your X profile -->
+    <!-- Latest Updates link to X (reduced spacing) -->
     <a href="https://x.com/seventhaura" target="_blank" rel="noopener noreferrer" class="updates-link">
       LATEST UPDATES
     </a>
-  </div>
 
-  <script>
-    document.getElementById('buy-blue-cap')?.addEventListener('click', () => {
-      window.location.href = 'https://buy.stripe.com/aFa00jepT33KgII4n2bwk04';
-    });
-    document.getElementById('buy-beanie')?.addEventListener('click', () => {
-      window.location.href = 'https://buy.stripe.com/aFabJ1a9DgUAcsscTybwk03';
-    });
-    document.getElementById('buy-black-hat')?.addEventListener('click', () => {
-      window.location.href = 'https://buy.stripe.com/5kQ4gz5Tn8o4644f1Gbwk00';
-    });
-    document.getElementById('buy-sticker')?.addEventListener('click', () => {
-      window.location.href = 'https://buy.stripe.com/4gM3cv6Xr9s8eAAf1Gbwk05';
-    });
-  </script>
+    <!-- Small follow prompt to bridge gap -->
+    <p class="follow-prompt">FOLLOW FOR NEW DROPS & CREATIVE INSPIRATION</p>
+  </div>
 
   <footer>
     <div class="social-links">
@@ -437,5 +369,20 @@
       <a href="/terms.html">Terms of Service</a>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('buy-blue-cap')?.addEventListener('click', () => {
+      window.location.href = 'https://buy.stripe.com/aFa00jepT33KgII4n2bwk04';
+    });
+    document.getElementById('buy-beanie')?.addEventListener('click', () => {
+      window.location.href = 'https://buy.stripe.com/aFabJ1a9DgUAcsscTybwk03';
+    });
+    document.getElementById('buy-black-hat')?.addEventListener('click', () => {
+      window.location.href = 'https://buy.stripe.com/5kQ4gz5Tn8o4644f1Gbwk00';
+    });
+    document.getElementById('buy-sticker')?.addEventListener('click', () => {
+      window.location.href = 'https://buy.stripe.com/4gM3cv6Xr9s8eAAf1Gbwk05';
+    });
+  </script>
 </body>
 </html>
