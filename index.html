@@ -124,6 +124,50 @@
       height: auto;
       object-fit: contain;
     }
+    @media (max-width: 768px) {
+      .main-image { max-width: 100% !important; aspect-ratio: 4 / 5; max-height: 280px; }
+      .extra-images { flex-wrap: wrap; gap: 8px; max-width: 100%; }
+      .extra-img { width: 48%; }
+      .products { gap: 60px 20px; }
+      .container { padding: clamp(50px, 10vw, 80px) clamp(15px, 4vw, 20px) clamp(40px, 8vw, 60px); }
+    }
+    @media (min-width: 1024px) {
+      .main-image { max-width: 380px !important; max-height: 380px !important; }
+      .extra-images { max-width: 380px; }
+      .products { gap: 100px 80px; }
+    }
+    .item-code {
+      font-family: 'MainFont', 'Impact', 'Arial Black', sans-serif;
+      font-weight: normal;
+      font-size: 2.8rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      margin: 24px 0 10px;
+      opacity: 0.9;
+    }
+    .sub {
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      opacity: 0.6;
+      margin-bottom: 20px;
+    }
+    .buy-link, .notify-link {
+      display: inline-block;
+      color: var(--text);
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--text);
+      padding: 12px 30px;
+      transition: all 0.4s;
+      margin-top: 16px;
+      cursor: pointer;
+    }
+    .buy-link:hover, .notify-link:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
 
     /* Email Capture Form */
     .email-capture {
@@ -177,7 +221,7 @@
     /* Latest Updates link */
     .updates-link {
       display: block;
-      margin: clamp(60px, 8vw, 100px) auto clamp(25px, 4vw, 45px);
+      margin: clamp(60px, 8vw, 100px) auto clamp(20px, 4vw, 40px);
       font-family: 'MainFont', 'Impact', sans-serif;
       font-size: clamp(2rem, 5vw, 3.2rem);
       letter-spacing: 0.2em;
@@ -191,12 +235,12 @@
 
     /* Small brand tagline - evenly placed between LATEST UPDATES and socials */
     .footer-brand {
-      margin: 0 auto clamp(25px, 4vw, 45px);
+      margin: 0 auto clamp(20px, 4vw, 40px);
       font-family: 'MainFont', 'Impact', sans-serif;
-      font-size: clamp(1.15rem, 3vw, 1.45rem);
+      font-size: clamp(1.1rem, 2.8vw, 1.4rem);
       letter-spacing: 0.08em;
       text-transform: lowercase;
-      opacity: 0.78;
+      opacity: 0.75;
       color: var(--text);
     }
 
