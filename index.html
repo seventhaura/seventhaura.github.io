@@ -76,7 +76,7 @@
       }
     }
 
-    /* === IMAGE HOVER EFFECT (Yeezy-style) === */
+    /* Image Hover Effect */
     .product {
       transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     }
@@ -124,35 +124,18 @@
       object-fit: contain;
     }
     @media (max-width: 768px) {
-      .main-image {
-        max-width: 100% !important;
-        aspect-ratio: 4 / 5;
-        max-height: 280px;
-      }
-      .extra-images {
-        flex-wrap: wrap;
-        gap: 8px;
-        max-width: 100%;
-      }
-      .extra-img {
-        width: 48%;
-      }
+      .main-image { max-width: 100% !important; aspect-ratio: 4 / 5; max-height: 280px; }
+      .extra-images { flex-wrap: wrap; gap: 8px; max-width: 100%; }
+      .extra-img { width: 48%; }
       .products { gap: 60px 20px; }
       .container {
         padding: clamp(50px, 10vw, 80px) clamp(15px, 4vw, 20px) clamp(40px, 8vw, 60px);
       }
     }
     @media (min-width: 1024px) {
-      .main-image {
-        max-width: 380px !important;
-        max-height: 380px !important;
-      }
-      .extra-images {
-        max-width: 380px;
-      }
-      .products {
-        gap: 100px 80px;
-      }
+      .main-image { max-width: 380px !important; max-height: 380px !important; }
+      .extra-images { max-width: 380px; }
+      .products { gap: 100px 80px; }
     }
     .item-code {
       font-family: 'MainFont', 'Impact', 'Arial Black', sans-serif;
@@ -187,10 +170,59 @@
       color: var(--bg);
     }
 
+    /* Email Capture Form */
+    .email-capture {
+      margin: clamp(60px, 8vw, 100px) auto;
+      max-width: 620px;
+      padding: 50px 30px;
+      background: rgba(255,255,255,0.3);
+      border: 1px solid rgba(17,17,17,0.08);
+      border-radius: 16px;
+    }
+    .email-capture h2 {
+      font-family: 'MainFont', 'Impact', sans-serif;
+      font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: 28px;
+    }
+    .email-capture input[type="email"] {
+      width: 100%;
+      max-width: 420px;
+      padding: 16px 20px;
+      font-size: 1.05rem;
+      border: 1px solid var(--text);
+      background: transparent;
+      color: var(--text);
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+    .email-capture button {
+      padding: 16px 48px;
+      background: var(--text);
+      color: var(--bg);
+      border: none;
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+    .email-capture button:hover {
+      background: #000;
+    }
+    .email-capture p {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      opacity: 0.65;
+    }
+
     /* Simple "Latest Updates" link to X */
     .updates-link {
       display: block;
-      margin: clamp(80px, 10vw, 120px) auto clamp(60px, 8vw, 100px);
+      margin: clamp(60px, 8vw, 100px) auto clamp(60px, 8vw, 100px);
       font-family: 'MainFont', 'Impact', sans-serif;
       font-size: clamp(2rem, 5vw, 3.2rem);
       letter-spacing: 0.2em;
@@ -225,21 +257,10 @@
       text-transform: uppercase;
       transition: opacity 0.4s ease;
     }
-    .social-link:hover {
-      opacity: 1;
-    }
-    .contact-info {
-      margin: 16px 0;
-      font-size: 1rem;
-      opacity: 0.8;
-    }
-    .contact-info a {
-      color: var(--text);
-      text-decoration: underline;
-    }
-    .contact-info a:hover {
-      opacity: 1;
-    }
+    .social-link:hover { opacity: 1; }
+    .contact-info { margin: 16px 0; font-size: 1rem; opacity: 0.8; }
+    .contact-info a { color: var(--text); text-decoration: underline; }
+    .contact-info a:hover { opacity: 1; }
     .legal-notice {
       font-size: 0.9rem;
       opacity: 0.7;
@@ -260,29 +281,23 @@
       margin: 0 12px;
       transition: opacity 0.3s ease;
     }
-    .policy-links a:hover {
-      opacity: 1;
-    }
+    .policy-links a:hover { opacity: 1; }
     @media (max-width: 768px) {
-      .policy-links {
-        font-size: 0.9rem;
-        margin-top: 20px;
-      }
-      .policy-links a {
-        margin: 0 10px;
-      }
+      .policy-links { font-size: 0.9rem; margin-top: 20px; }
+      .policy-links a { margin: 0 10px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>SEVENTHAURA</h1>
-   
+    
     <p class="brand-statement">
       We believe art lives within every soul, within you. It's not just something you create it's who you are. We exist to affirm that truth, to remind you (and the world) to embrace your creative essence and pursue your one wild and precious life boldly. Every piece we make is a quiet invitation: see the beauty around you, carry your inner art outward, and live as the masterpiece you already are.
     </p>
 
     <div class="products">
+      <!-- Your 6 products (unchanged) -->
       <!-- 1. Blue Cap -->
       <div class="product">
         <a href="products/blue-cap.html" class="product-link" target="_blank" rel="noopener noreferrer">
@@ -370,6 +385,17 @@
         <button id="buy-sticker" class="buy-link">Buy Now</button>
       </div>
     </div>
+
+    <!-- Email Capture Form (using your Formspree link) -->
+    <section class="email-capture">
+      <h2>Get Notified of New Drops</h2>
+      <form action="https://formspree.io/f/mwvnzeon" method="POST">
+        <input type="email" name="email" placeholder="your@email.com" required>
+        <input type="hidden" name="_subject" value="New Notify Me Signup – SEVENTHAURA">
+        <button type="submit">Notify Me</button>
+      </form>
+      <p>We respect your privacy — only drop notifications, no spam.</p>
+    </section>
 
     <!-- Simple link to your X profile -->
     <a href="https://x.com/seventhaura" target="_blank" rel="noopener noreferrer" class="updates-link">
