@@ -124,50 +124,6 @@
       height: auto;
       object-fit: contain;
     }
-    @media (max-width: 768px) {
-      .main-image { max-width: 100% !important; aspect-ratio: 4 / 5; max-height: 280px; }
-      .extra-images { flex-wrap: wrap; gap: 8px; max-width: 100%; }
-      .extra-img { width: 48%; }
-      .products { gap: 60px 20px; }
-      .container { padding: clamp(50px, 10vw, 80px) clamp(15px, 4vw, 20px) clamp(40px, 8vw, 60px); }
-    }
-    @media (min-width: 1024px) {
-      .main-image { max-width: 380px !important; max-height: 380px !important; }
-      .extra-images { max-width: 380px; }
-      .products { gap: 100px 80px; }
-    }
-    .item-code {
-      font-family: 'MainFont', 'Impact', 'Arial Black', sans-serif;
-      font-weight: normal;
-      font-size: 2.8rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      margin: 24px 0 10px;
-      opacity: 0.9;
-    }
-    .sub {
-      font-size: 1.2rem;
-      letter-spacing: 0.2em;
-      opacity: 0.6;
-      margin-bottom: 20px;
-    }
-    .buy-link, .notify-link {
-      display: inline-block;
-      color: var(--text);
-      font-size: 1rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 1px solid var(--text);
-      padding: 12px 30px;
-      transition: all 0.4s;
-      margin-top: 16px;
-      cursor: pointer;
-    }
-    .buy-link:hover, .notify-link:hover {
-      background: var(--text);
-      color: var(--bg);
-    }
 
     /* Email Capture Form */
     .email-capture {
@@ -221,7 +177,7 @@
     /* Latest Updates link */
     .updates-link {
       display: block;
-      margin: clamp(60px, 8vw, 100px) auto clamp(20px, 4vw, 40px);
+      margin: clamp(60px, 8vw, 100px) auto clamp(30px, 5vw, 50px);
       font-family: 'MainFont', 'Impact', sans-serif;
       font-size: clamp(2rem, 5vw, 3.2rem);
       letter-spacing: 0.2em;
@@ -235,19 +191,20 @@
       opacity: 1;
     }
 
-    /* Small brand tagline above socials */
+    /* Small brand tagline - evenly placed between "LATEST UPDATES" and socials */
     .footer-brand {
-      margin: 0 auto 28px;
+      display: block;
+      margin: 0 auto clamp(30px, 5vw, 50px);
       font-family: 'MainFont', 'Impact', sans-serif;
-      font-size: clamp(1.3rem, 3vw, 1.8rem);
-      letter-spacing: 0.12em;
+      font-size: clamp(1.1rem, 2.8vw, 1.4rem);   /* smaller as requested */
+      letter-spacing: 0.08em;
       text-transform: lowercase;
       opacity: 0.75;
       color: var(--text);
     }
 
     footer {
-      margin-top: clamp(40px, 6vw, 70px);
+      margin-top: clamp(30px, 5vw, 50px);
       padding: 40px 20px 60px;
       text-align: center;
       font-size: 1rem;
@@ -301,12 +258,13 @@
 <body>
   <div class="container">
     <h1>SEVENTHAURA</h1>
-    
+   
     <p class="brand-statement">
       We believe art lives within every soul, within you. It's not just something you create it's who you are. We exist to affirm that truth, to remind you (and the world) to embrace your creative essence and pursue your one wild and precious life boldly. Every piece we make is a quiet invitation: see the beauty around you, carry your inner art outward, and live as the masterpiece you already are.
     </p>
 
     <div class="products">
+      <!-- All 6 products fully included -->
       <!-- 1. Blue Cap -->
       <div class="product">
         <a href="products/blue-cap.html" class="product-link" target="_blank" rel="noopener noreferrer">
@@ -322,7 +280,6 @@
         </a>
         <button id="buy-blue-cap" class="buy-link">Buy Now</button>
       </div>
-
       <!-- 2. Orange Beanie -->
       <div class="product">
         <a href="products/beanie.html" class="product-link" target="_blank" rel="noopener noreferrer">
@@ -338,7 +295,6 @@
         </a>
         <button id="buy-beanie" class="buy-link">Buy Now</button>
       </div>
-
       <!-- 3. Yosemite T -->
       <div class="product">
         <a href="products/yosemite-t.html" class="product-link" target="_blank" rel="noopener noreferrer">
@@ -354,7 +310,6 @@
         </a>
         <a href="mailto:contact@seventhaura.com?subject=Notify%20Me%20-%20Yosemite%20T%20(YOSE-01)&body=Hi%20SEVENTHAURA%20team,%0A%0AI%20would%20like%20to%20be%20notified%20when%20the%20Yosemite%20T%20(YOSE-01)%20is%20back%20in%20stock.%0A%0AName:%20%0AEmail:%20%0APreferred%20size:%20%0A%0AThank%20you!" class="notify-link" rel="noopener noreferrer">Notify Me When Available</a>
       </div>
-
       <!-- 4. Grey T -->
       <div class="product">
         <a href="products/grey-t.html" class="product-link" target="_blank" rel="noopener noreferrer">
@@ -370,7 +325,6 @@
         </a>
         <a href="mailto:contact@seventhaura.com?subject=Notify%20Me%20-%20Grey%20T%20(GREY-01)&body=Hi%20SEVENTHAURA%20team,%0A%0AI%20would%20like%20to%20be%20notified%20when%20the%20Grey%20T%20(GREY-01)%20is%20back%20in%20stock.%0A%0AName:%20%0AEmail:%20%0APreferred%20size:%20%0A%0AThank%20you!" class="notify-link" rel="noopener noreferrer">Notify Me When Available</a>
       </div>
-
       <!-- 5. Black Hat -->
       <div class="product">
         <a href="products/cap-1.html" class="product-link" target="_blank" rel="noopener noreferrer">
@@ -386,7 +340,6 @@
         </a>
         <button id="buy-black-hat" class="buy-link">Buy Now</button>
       </div>
-
       <!-- 6. Sticker -->
       <div class="product">
         <a href="products/sticker.html" class="product-link" target="_blank" rel="noopener noreferrer">
@@ -411,13 +364,13 @@
       <p>We respect your privacy — only drop notifications, no spam.</p>
     </section>
 
-    <!-- Latest Updates link to X -->
+    <!-- Latest Updates link -->
     <a href="https://x.com/seventhaura" target="_blank" rel="noopener noreferrer" class="updates-link">
       LATEST UPDATES
     </a>
 
-    <!-- Small brand tagline above socials -->
-    <p class="footer-brand">seventhaura, where art lives.</p>
+    <!-- Small brand tagline - evenly placed -->
+    <p class="footer-brand">seventhaura where art lives.</p>
   </div>
 
   <footer>
