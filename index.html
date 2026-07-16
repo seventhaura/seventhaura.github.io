@@ -46,130 +46,65 @@
       opacity: 0.75;
       margin-bottom: clamp(20px, 4vw, 40px);
       line-height: 1;
-      text-align: center;
-      width: 100%;
-      max-width: 95vw;
-      margin-left: auto;
-      margin-right: auto;
     }
     .brand-statement {
       max-width: 820px;
-      margin: 0 auto clamp(50px, 8vw, 90px);
+      margin: 0 auto clamp(60px, 8vw, 100px);
       font-size: clamp(1.05rem, 2.5vw, 1.25rem);
       line-height: 1.65;
       letter-spacing: 0.02em;
       opacity: 0.72;
       font-weight: 300;
       color: var(--text);
-      text-align: center;
-    }
-    @media (max-width: 768px) {
-      h1 {
-        font-size: clamp(2.4rem, 8vw, 4.2rem);
-        letter-spacing: clamp(0.1em, 2vw, 0.4em);
-        white-space: nowrap;
-        overflow: hidden;
-      }
-      .brand-statement {
-        font-size: clamp(0.98rem, 3.2vw, 1.12rem);
-        margin-bottom: clamp(40px, 10vw, 70px);
-      }
     }
 
-    /* Image Hover Effect */
+    /* Yeezy-style Product Grid */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 80px 60px;
+      margin-bottom: clamp(60px, 8vw, 120px);
+    }
     .product {
+      position: relative;
       transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     }
     .product:hover {
       transform: translateY(-12px);
     }
-    .main-image {
-      transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .product:hover .main-image {
-      transform: scale(1.04);
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 80px 60px;
-      margin-bottom: clamp(40px, 6vw, 80px);
-    }
-    .product {
-      text-align: center;
-      max-width: 420px;
-      margin: 0 auto;
-    }
-    .main-image {
-      width: 100% !important;
-      max-width: 360px !important;
-      height: auto !important;
+    .product img {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
       display: block;
       margin: 0 auto;
       object-fit: contain;
-      max-height: 360px !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     }
-    .extra-images {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 16px;
-      max-width: 360px;
-      margin-left: auto;
-      margin-right: auto;
+    .product:hover img {
+      transform: scale(1.03);
     }
-    .extra-img {
-      width: 48%;
-      height: auto;
-      object-fit: contain;
-    }
-    @media (max-width: 768px) {
-      .main-image { max-width: 100% !important; aspect-ratio: 4 / 5; max-height: 280px; }
-      .extra-images { flex-wrap: wrap; gap: 8px; max-width: 100%; }
-      .extra-img { width: 48%; }
-      .products { gap: 60px 20px; }
-      .container { padding: clamp(50px, 10vw, 80px) clamp(15px, 4vw, 20px) clamp(40px, 8vw, 60px); }
-    }
-    @media (min-width: 1024px) {
-      .main-image { max-width: 380px !important; max-height: 380px !important; }
-      .extra-images { max-width: 380px; }
-      .products { gap: 100px 80px; }
-    }
-    .item-code {
-      font-family: 'MainFont', 'Impact', 'Arial Black', sans-serif;
-      font-weight: normal;
-      font-size: 2.8rem;
-      letter-spacing: 0.4em;
+    .product-name {
+      margin-top: 24px;
+      font-family: 'MainFont', 'Impact', sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin: 24px 0 10px;
-      opacity: 0.9;
-    }
-    .sub {
-      font-size: 1.2rem;
-      letter-spacing: 0.2em;
-      opacity: 0.6;
-      margin-bottom: 20px;
-    }
-    .buy-link, .notify-link {
-      display: inline-block;
-      color: var(--text);
-      font-size: 1rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 1px solid var(--text);
-      padding: 12px 30px;
-      transition: all 0.4s;
-      margin-top: 16px;
-      cursor: pointer;
-    }
-    .buy-link:hover, .notify-link:hover {
-      background: var(--text);
-      color: var(--bg);
+      opacity: 0.85;
     }
 
-    /* Email Capture Form */
+    @media (max-width: 768px) {
+      .products {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 60px 30px;
+      }
+      .product img {
+        max-width: 100%;
+      }
+    }
+
+    /* Email Capture & Footer styles */
     .email-capture {
       margin: clamp(60px, 8vw, 100px) auto;
       max-width: 620px;
@@ -218,10 +153,9 @@
       opacity: 0.65;
     }
 
-    /* Latest Updates link */
     .updates-link {
       display: block;
-      margin: clamp(60px, 8vw, 100px) auto clamp(20px, 4vw, 40px);
+      margin: clamp(40px, 6vw, 80px) auto clamp(20px, 4vw, 40px);
       font-family: 'MainFont', 'Impact', sans-serif;
       font-size: clamp(2rem, 5vw, 3.2rem);
       letter-spacing: 0.2em;
@@ -229,11 +163,9 @@
       opacity: 0.8;
       color: var(--text);
       text-decoration: none;
-      transition: opacity 0.3s ease;
     }
     .updates-link:hover { opacity: 1; }
 
-    /* Small brand tagline - evenly placed between LATEST UPDATES and socials */
     .footer-brand {
       margin: 0 auto clamp(20px, 4vw, 40px);
       font-family: 'MainFont', 'Impact', sans-serif;
@@ -241,7 +173,6 @@
       letter-spacing: 0.08em;
       text-transform: lowercase;
       opacity: 0.75;
-      color: var(--text);
     }
 
     footer {
@@ -268,7 +199,6 @@
     .social-link:hover { opacity: 1; }
     .contact-info { margin: 16px 0; font-size: 1rem; opacity: 0.8; }
     .contact-info a { color: var(--text); text-decoration: underline; }
-    .contact-info a:hover { opacity: 1; }
     .legal-notice {
       font-size: 0.9rem;
       opacity: 0.7;
@@ -290,112 +220,139 @@
       transition: opacity 0.3s ease;
     }
     .policy-links a:hover { opacity: 1; }
-    @media (max-width: 768px) {
-      .policy-links { font-size: 0.9rem; margin-top: 20px; }
-      .policy-links a { margin: 0 10px; }
-    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>SEVENTHAURA</h1>
-   
+
     <p class="brand-statement">
       We believe art lives within every soul, within you. It's not just something you create it's who you are. We exist to affirm that truth, to remind you (and the world) to embrace your creative essence and pursue your one wild and precious life boldly. Every piece we make is a quiet invitation: see the beauty around you, carry your inner art outward, and live as the masterpiece you already are.
     </p>
 
+    <!-- Product Grid -->
     <div class="products">
-      <!-- 1. Blue Cap -->
+      <!-- 1. Bethlehem, Judea Hoodie -->
       <div class="product">
-        <a href="products/blue-cap.html" class="product-link" target="_blank" rel="noopener noreferrer">
-          <div class="product-content">
-            <img src="products/blue-cap/front.png" alt="Blue Cap Front" class="main-image" loading="lazy">
-            <div class="extra-images">
-              <img src="products/blue-cap/back.png" alt="Blue Cap Back" class="extra-img" loading="lazy">
-              <img src="products/blue-cap/side.png" alt="Blue Cap Side" class="extra-img" loading="lazy">
-            </div>
-            <div class="item-code">BLUE-01</div>
-            <div class="sub">BLUE CAP</div>
-          </div>
+        <a href="https://seventhauracollection.printful.me/product/bethlehem-judea" target="_blank" rel="noopener noreferrer">
+          <img src="/attachments/unisex-super-heavyweight-hoodie-chocolate-brown-back-6a58f8a752d4f.png" alt="BETHLEHEM, JUDEA Hoodie" loading="lazy">
         </a>
-        <button id="buy-blue-cap" class="buy-link">Buy Now</button>
+        <div class="product-name">BETHLEHEM, JUDEA</div>
       </div>
 
-      <!-- 2. Orange Beanie -->
+      <!-- 2. DEFINITION "T" -->
       <div class="product">
-        <a href="products/beanie.html" class="product-link" target="_blank" rel="noopener noreferrer">
-          <div class="product-content">
-            <img src="products/beanie/front flat.png" alt="Orange Beanie Front" class="main-image" loading="lazy">
-            <div class="extra-images">
-              <img src="products/beanie/detail.png" alt="Beanie Detail" class="extra-img" loading="lazy">
-              <img src="products/beanie/ghost.png" alt="Beanie Ghost" class="extra-img" loading="lazy">
-            </div>
-            <div class="item-code">BEAN-01</div>
-            <div class="sub">ORANGE BEANIE</div>
-          </div>
+        <a href="https://seventhauracollection.printful.me/product/seventhaura-define-t" target="_blank" rel="noopener noreferrer">
+          <img src="/attachments/unisex-organic-oversized-high-neck-blaster-2.0-t-shirt-black-back-6a58f9cca2d56.png" alt="DEFINITION T Shirt" loading="lazy">
         </a>
-        <button id="buy-beanie" class="buy-link">Buy Now</button>
+        <div class="product-name">DEFINITION "T"</div>
       </div>
 
-      <!-- 3. Yosemite T -->
+      <!-- 3. F.L. "T" -->
       <div class="product">
-        <a href="products/yosemite-t.html" class="product-link" target="_blank" rel="noopener noreferrer">
-          <div class="product-content">
-            <img src="products/yosemite-t/back.png" alt="Yosemite T Back" class="main-image" loading="lazy">
-            <div class="extra-images">
-              <img src="products/yosemite-t/front.png" alt="Yosemite T Front" class="extra-img" loading="lazy">
-              <img src="products/yosemite-t/folded.png" alt="Yosemite T Folded" class="extra-img" loading="lazy">
-            </div>
-            <div class="item-code">YOSE-01</div>
-            <div class="sub">YOSEMITE T</div>
-          </div>
+        <a href="https://seventhauracollection.printful.me/product/embroidered-blue" target="_blank" rel="noopener noreferrer">
+          <img src="/attachments/unisex-organic-oversized-high-neck-blaster-2.0-t-shirt-stone-front-6a58f9ea6e6f1.png" alt="F.L. T Shirt" loading="lazy">
         </a>
-        <a href="mailto:contact@seventhaura.com?subject=Notify%20Me%20-%20Yosemite%20T%20(YOSE-01)&body=Hi%20SEVENTHAURA%20team,%0A%0AI%20would%20like%20to%20be%20notified%20when%20the%20Yosemite%20T%20(YOSE-01)%20is%20back%20in%20stock.%0A%0AName:%20%0AEmail:%20%0APreferred%20size:%20%0A%0AThank%20you!" class="notify-link" rel="noopener noreferrer">Notify Me When Available</a>
+        <div class="product-name">F.L. "T"</div>
       </div>
 
-      <!-- 4. Grey T -->
+      <!-- 4. F.L. CROP -->
       <div class="product">
-        <a href="products/grey-t.html" class="product-link" target="_blank" rel="noopener noreferrer">
-          <div class="product-content">
-            <img src="products/grey-t/front.png" alt="Grey T Front" class="main-image" loading="lazy">
-            <div class="extra-images">
-              <img src="products/grey-t/back.png" alt="Grey T Back" class="extra-img" loading="lazy">
-              <img src="products/grey-t/folded.png" alt="Grey T Folded" class="extra-img" loading="lazy">
-            </div>
-            <div class="item-code">GREY-01</div>
-            <div class="sub">GREY T</div>
-          </div>
+        <a href="https://seventhauracollection.printful.me/product/womens-embroidered-sevethaura" target="_blank" rel="noopener noreferrer">
+          <img src="/attachments/womens-crop-top-bone-front-6a58f99842a38.png" alt="F.L. CROP Top" loading="lazy">
         </a>
-        <a href="mailto:contact@seventhaura.com?subject=Notify%20Me%20-%20Grey%20T%20(GREY-01)&body=Hi%20SEVENTHAURA%20team,%0A%0AI%20would%20like%20to%20be%20notified%20when%20the%20Grey%20T%20(GREY-01)%20is%20back%20in%20stock.%0A%0AName:%20%0AEmail:%20%0APreferred%20size:%20%0A%0AThank%20you!" class="notify-link" rel="noopener noreferrer">Notify Me When Available</a>
+        <div class="product-name">F.L. CROP</div>
       </div>
 
-      <!-- 5. Black Hat -->
+      <!-- 5. I AM ART "T" -->
       <div class="product">
-        <a href="products/cap-1.html" class="product-link" target="_blank" rel="noopener noreferrer">
-          <div class="product-content">
-            <img src="products/cap1/side.png" alt="Black Hat Side" class="main-image" loading="lazy">
-            <div class="extra-images">
-              <img src="products/cap1/stack.png" alt="Black Hat Stack/Front" class="extra-img" loading="lazy">
-              <img src="products/cap1/back.png" alt="Black Hat Back" class="extra-img" loading="lazy">
-            </div>
-            <div class="item-code">CAP-01</div>
-            <div class="sub">BLACK HAT</div>
-          </div>
+        <a href="https://seventhauracollection.printful.me/product/i-am-art-t-2026" target="_blank" rel="noopener noreferrer">
+          <img src="/attachments/unisex-organic-oversized-high-neck-blaster-2.0-t-shirt-heather-grey-front-6a58f91b1a6a8.png" alt="I AM ART T Shirt" loading="lazy">
         </a>
-        <button id="buy-black-hat" class="buy-link">Buy Now</button>
+        <div class="product-name">I AM ART "T"</div>
       </div>
 
-      <!-- 6. Sticker -->
+      <!-- 6. I AM ART (Prototype) -->
       <div class="product">
-        <a href="products/sticker.html" class="product-link" target="_blank" rel="noopener noreferrer">
-          <div class="product-content">
-            <img src="products/sticker/mockup.png" alt="Sticker Mockup" class="main-image" loading="lazy">
-            <div class="item-code">STKR-01</div>
-            <div class="sub">STICKER</div>
-          </div>
+        <a href="https://seventhauracollection.printful.me/product/i-am-art-prototype" target="_blank" rel="noopener noreferrer">
+          <img src="/attachments/unisex-organic-oversized-high-neck-blaster-2.0-t-shirt-heather-grey-front-6a58f9bda8b9e.png" alt="I AM ART (Prototype) T Shirt" loading="lazy">
         </a>
-        <button id="buy-sticker" class="buy-link">Buy Now</button>
+        <div class="product-name">I AM ART (Prototype)</div>
       </div>
+
+      <!-- 7. POKI HAT -->
+      <div class="product">
+        <a href="https://seventhauracollection.printful.me/product/japan-x-seventhaura" target="_blank" rel="noopener noreferrer">
+          <img src="/attachments/foam-trucker-hat-red-white-royal-one-size-front-6a58f96485f01.png" alt="POKI HAT" loading="lazy">
+        </a>
+        <div class="product-name">POKI HAT</div>
+      </div>
+
+      <!-- 8. PRODUCTION CAP -->
+      <div class="product">
+        <a href="https://seventhauracollection.printful.me/product/production-hat" target="_blank" rel="noopener noreferrer">
+          <img src="/attachments/classic-dad-hat-black-front-6a58f86fce510.png" alt="PRODUCTION CAP" loading="lazy">
+        </a>
+        <div class="product-name">PRODUCTION CAP</div>
+      </div>
+
+      <!-- 9. PRODUCTION CAP (JPN) -->
+      <div class="product">
+        <a href="https://seventhauracollection.printful.me/product/japanese-x-production-hat" target="_blank" rel="noopener noreferrer">
+          <img src="/attachments/5-panel-mid-profile-baseball-cap-black-front-6a58f93b9ab98.png" alt="PRODUCTION CAP (JPN)" loading="lazy">
+        </a>
+        <div class="product-name">PRODUCTION CAP (JPN)</div>
+      </div>
+
+      <!-- 10. SEVENTHAURA CROP -->
+      <div class="product">
+        <a href="https://seventhauracollection.printful.me/product/womens-crop-top-x-seventhaura" target="_blank" rel="noopener noreferrer">
+          <img src="/attachments/womens-crop-top-black-front-6a58f9a8d1da6.png" alt="SEVENTHAURA CROP Top" loading="lazy">
+        </a>
+        <div class="product-name">SEVENTHAURA CROP</div>
+      </div>
+
+      <!-- 11. SEVENTHAURA HAT -->
+      <div class="product">
+        <a href="https://seventhauracollection.printful.me/product/blue-cap" target="_blank" rel="noopener noreferrer">
+          <img src="/attachments/5-panel-mid-profile-baseball-cap-royal-natural-front-6a58f83ca2c70.png" alt="SEVENTHAURA HAT" loading="lazy">
+        </a>
+        <div class="product-name">SEVENTHAURA HAT</div>
+      </div>
+
+      <!-- 12. STRENGTH "T" -->
+      <div class="product">
+        <a href="https://seventhauracollection.printful.me/product/muscle-shirt" target="_blank" rel="noopener noreferrer">
+          <img src="/attachments/unisex-muscle-shirt-black-back-6a58f8ff07ab7.png" alt="STRENGTH T Muscle Shirt" loading="lazy">
+        </a>
+        <div class="product-name">STRENGTH "T"</div>
+      </div>
+
+      <!-- 13. YOSEMITE, CALIFORNIA -->
+      <div class="product">
+        <a href="https://seventhauracollection.printful.me/product/yosemite-t" target="_blank" rel="noopener noreferrer">
+          <img src="/attachments/unisex-organic-oversized-high-neck-blaster-2.0-t-shirt-french-navy-back-6a58f8d4cdbc6.png" alt="YOSEMITE, CALIFORNIA T Shirt" loading="lazy">
+        </a>
+        <div class="product-name">YOSEMITE, CALIFORNIA</div>
+      </div>
+
+      <!-- 14. YOSEMITE, CALIFORNIA 2 -->
+      <div class="product">
+        <a href="https://seventhauracollection.printful.me/product/unisex-organic-oversized-high-neck-t-shirt" target="_blank" rel="noopener noreferrer">
+          <img src="/attachments/unisex-organic-oversized-high-neck-blaster-2.0-t-shirt-heather-grey-back-6a58f98527813.png" alt="YOSEMITE, CALIFORNIA 2 T Shirt" loading="lazy">
+        </a>
+        <div class="product-name">YOSEMITE, CALIFORNIA 2</div>
+      </div>
+
+      <!-- 15. YOSEMITE, CALIFORNIA 2 (SWTR) -->
+      <div class="product">
+        <a href="https://seventhauracollection.printful.me/product/yosemite-2" target="_blank" rel="noopener noreferrer">
+          <img src="/attachments/unisex-heavyweight-hooded-sweatshirt-deadwood-tree-camo-back-6a58f951a683b.png" alt="YOSEMITE, CALIFORNIA 2 (SWTR) Hoodie" loading="lazy">
+        </a>
+        <div class="product-name">YOSEMITE, CALIFORNIA 2 (SWTR)</div>
+      </div>
+
+      <!-- Add more products here -->
     </div>
 
     <!-- Email Capture Form -->
@@ -409,12 +366,9 @@
       <p>We respect your privacy — only drop notifications, no spam.</p>
     </section>
 
-    <!-- Latest Updates link -->
     <a href="https://x.com/seventhaura" target="_blank" rel="noopener noreferrer" class="updates-link">
       LATEST UPDATES
     </a>
-
-    <!-- Small brand tagline - evenly placed -->
     <p class="footer-brand">seventhaura where art lives.</p>
   </div>
 
@@ -437,20 +391,5 @@
       <a href="/terms.html">Terms of Service</a>
     </div>
   </footer>
-
-  <script>
-    document.getElementById('buy-blue-cap')?.addEventListener('click', () => {
-      window.location.href = 'https://buy.stripe.com/aFa00jepT33KgII4n2bwk04';
-    });
-    document.getElementById('buy-beanie')?.addEventListener('click', () => {
-      window.location.href = 'https://buy.stripe.com/aFabJ1a9DgUAcsscTybwk03';
-    });
-    document.getElementById('buy-black-hat')?.addEventListener('click', () => {
-      window.location.href = 'https://buy.stripe.com/5kQ4gz5Tn8o4644f1Gbwk00';
-    });
-    document.getElementById('buy-sticker')?.addEventListener('click', () => {
-      window.location.href = 'https://buy.stripe.com/4gM3cv6Xr9s8eAAf1Gbwk05';
-    });
-  </script>
 </body>
 </html>
